@@ -1,0 +1,3327 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gtfs.org/realtime/reference/">
+      
+      <link rel="icon" href="../../assets/org-black.svg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>Reference - General Transit Feed Specification</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro:300,400,400i,700%7CSF+Mono&display=fallback">
+        <style>:root{--md-text-font:"SF Pro";--md-code-font:"SF Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-DRBTC7SSDT"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-DRBTC7SSDT",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DRBTC7SSDT"></script>
+
+
+    
+    
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="General Transit Feed Specification's RSS Feed" href="https://gtfs.org/feed_rss_created.xml">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gtfs-realtime-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+  <p>GTFS.org got some updates! Read the press release <a href="http://bit.ly/gtfs-org-release" target="_blank">here</a>.  🚀 </p>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="General Transit Feed Specification" class="md-header__button md-logo" aria-label="General Transit Feed Specification" data-md-component="logo">
+      <img id="logo_light_mode" src="../../assets/org-white.svg" alt="logo">
+<img id="logo_dark_mode" src="../.." alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            General Transit Feed Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../schedule/" class="md-tabs__link">
+        GTFS Schedule
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        GTFS Realtime
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        Resources
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../extensions/" class="md-tabs__link">
+      Extensions
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="General Transit Feed Specification" class="md-nav__button md-logo" aria-label="General Transit Feed Specification" data-md-component="logo">
+      <img id="logo_light_mode" src="../../assets/org-white.svg" alt="logo">
+<img id="logo_dark_mode" src="../.." alt="logo">
+    </a>
+    General Transit Feed Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../schedule/">GTFS Schedule</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="GTFS Schedule" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          GTFS Schedule
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/reference/" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/best-practices/" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../schedule/examples/">Examples</a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/example-feed/" class="md-nav__link">
+        Example GTFS Feed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/data-examples/" class="md-nav__link">
+        Data Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../schedule/changes/">Changes</a>
+          
+            <label for="__nav_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Changes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Changes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/process/" class="md-nav__link">
+        Specification Amendment Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/guiding-principles/" class="md-nav__link">
+        Guiding Principles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/revision-history/" class="md-nav__link">
+        Revision History
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">GTFS Realtime</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="GTFS Realtime" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTFS Realtime
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Reference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#term-definitions" class="md-nav__link">
+    Term Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Term Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    Required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    Cardinality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol-buffer-data-types" class="md-nav__link">
+    Protocol Buffer data types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-fields" class="md-nav__link">
+    Experimental fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-index" class="md-nav__link">
+    Element Index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-feedmessage" class="md-nav__link">
+    message FeedMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-feedheader" class="md-nav__link">
+    message FeedHeader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-incrementality" class="md-nav__link">
+    enum Incrementality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-feedentity" class="md-nav__link">
+    message FeedEntity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-tripupdate" class="md-nav__link">
+    message TripUpdate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-stoptimeevent" class="md-nav__link">
+    message StopTimeEvent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-stoptimeupdate" class="md-nav__link">
+    message StopTimeUpdate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-schedulerelationship" class="md-nav__link">
+    enum ScheduleRelationship
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-stoptimeproperties" class="md-nav__link">
+    message StopTimeProperties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-tripproperties" class="md-nav__link">
+    message TripProperties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-vehicleposition" class="md-nav__link">
+    message VehiclePosition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-vehiclestopstatus" class="md-nav__link">
+    enum VehicleStopStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-congestionlevel" class="md-nav__link">
+    enum CongestionLevel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-occupancystatus" class="md-nav__link">
+    enum OccupancyStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-carriagedetails" class="md-nav__link">
+    message CarriageDetails
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-alert" class="md-nav__link">
+    message Alert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-cause" class="md-nav__link">
+    enum Cause
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-effect" class="md-nav__link">
+    enum Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-severitylevel" class="md-nav__link">
+    enum SeverityLevel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-timerange" class="md-nav__link">
+    message TimeRange
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-position" class="md-nav__link">
+    message Position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-tripdescriptor" class="md-nav__link">
+    message TripDescriptor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-schedulerelationship_1" class="md-nav__link">
+    enum ScheduleRelationship
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-vehicledescriptor" class="md-nav__link">
+    message VehicleDescriptor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-entityselector" class="md-nav__link">
+    message EntitySelector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-translatedstring" class="md-nav__link">
+    message TranslatedString
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-translation" class="md-nav__link">
+    message Translation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-translatedimage" class="md-nav__link">
+    message TranslatedImage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-localizedimage" class="md-nav__link">
+    message LocalizedImage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-shape" class="md-nav__link">
+    message Shape
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proto/" class="md-nav__link">
+        Protobuf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../feed-entities/">Feed Entities</a>
+          
+            <label for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Feed Entities" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Feed Entities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trip-updates/" class="md-nav__link">
+        Trip Updates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-alerts/" class="md-nav__link">
+        Service Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-positions/" class="md-nav__link">
+        Vehicle Positions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../examples/">Examples</a>
+          
+            <label for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feed-examples/" class="md-nav__link">
+        Feed Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-examples/" class="md-nav__link">
+        Code Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../changes/">Changes</a>
+          
+            <label for="__nav_3_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Changes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Changes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        Specification Amendment Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiding-principles/" class="md-nav__link">
+        Guiding Principles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../revision-history/" class="md-nav__link">
+        Revision History
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        Realtime Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../resources/">Resources</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software-for-creating-apis/" class="md-nav__link">
+        Software for Creating APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/agency-tools/" class="md-nav__link">
+        Agency Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps/" class="md-nav__link">
+        Apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/sdk/" class="md-nav__link">
+        SDKs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/visualizations/" class="md-nav__link">
+        Visualizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/gtfs/" class="md-nav__link">
+        GTFS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/gtfs-realtime/" class="md-nav__link">
+        GTFS Realtime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/siri/" class="md-nav__link">
+        SIRI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/multimodal/" class="md-nav__link">
+        Other multimodal data formats
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/other/" class="md-nav__link">
+        Other Resources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/google/transit/edit/master/docs/realtime/reference.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="gtfs-realtime-reference">GTFS Realtime Reference<a class="headerlink" href="#gtfs-realtime-reference" title="Permanent link">&para;</a></h1>
+<p>A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of their vehicles, and expected arrival times.</p>
+<p>Version 2.0 of the feed specification is discussed and documented on this site. Valid versions are "2.0", "1.0".</p>
+<h3 id="term-definitions">Term Definitions<a class="headerlink" href="#term-definitions" title="Permanent link">&para;</a></h3>
+<h4 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h4>
+<p>In GTFS-realtime v2.0 and higher, the <em>Required</em> column describes what fields must be provided by a producer in order for the transit data to be valid and make sense to a consuming application.</p>
+<p>The following values are used in the <em>Required</em> field:</p>
+<ul>
+<li><strong>Required</strong>: This field must be provided by a GTFS-realtime feed producer.</li>
+<li><strong>Conditionally required</strong>: This field is required under certain conditions, which are outlined in the field <em>Description</em>. Outside of these conditions, the field is optional.</li>
+<li><strong>Optional</strong>: This field is optional and is not required to be implemented by producers. However, if the data is available in the underlying automatic vehicle location systems (e.g., VehiclePosition <code>timestamp</code>) it is recommended that producers provide these optional fields when possible.</li>
+</ul>
+<p><em>Note that semantic requirements were not defined in GTFS-realtime version 1.0, and therefore feeds with <code>gtfs_realtime_version</code> of <code>1</code> may not meet these requirements (see <a href="https://github.com/google/transit/pull/64">the proposal for semantic requirements</a> for details).</em></p>
+<h4 id="cardinality">Cardinality<a class="headerlink" href="#cardinality" title="Permanent link">&para;</a></h4>
+<p><em>Cardinality</em> represents the number of elements that may be provided for a particular field, with the following values:</p>
+<ul>
+<li><strong>One</strong> - A single one element may be provided for this field. This maps to the <a href="https://developers.google.com/protocol-buffers/docs/proto#simple">Protocol Buffer <em>required</em> and <em>optional</em> cardinalities</a>.</li>
+<li><strong>Many</strong> - Many elements (0, 1, or more) may be provided for this field. This maps to the <a href="https://developers.google.com/protocol-buffers/docs/proto#simple">Protocol Buffer <em>repeated</em> cardinality</a>.</li>
+</ul>
+<p>Always reference the <em>Required</em> and <em>Description</em> fields to see when a field is required, conditionally required, or optional. Please reference <a href="https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto"><code>gtfs-realtime.proto</code></a> for Protocol Buffer cardinality.</p>
+<h4 id="protocol-buffer-data-types">Protocol Buffer data types<a class="headerlink" href="#protocol-buffer-data-types" title="Permanent link">&para;</a></h4>
+<p>The following protocol buffer data types are used to describe feed elements:</p>
+<ul>
+<li><strong>message</strong>: Complex type</li>
+<li><strong>enum</strong>: List of fixed values</li>
+</ul>
+<h4 id="experimental-fields">Experimental fields<a class="headerlink" href="#experimental-fields" title="Permanent link">&para;</a></h4>
+<p>Fields labeled as <strong>experimental</strong> are subject to change and not yet formally adopted into the specification. An <strong>experimental</strong> field may be formally adopted in the future.</p>
+<h2 id="element-index">Element Index<a class="headerlink" href="#element-index" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#message-feedmessage">FeedMessage</a><ul>
+<li><a href="#message-feedheader">FeedHeader</a><ul>
+<li><a href="#enum-incrementality">Incrementality</a></li>
+</ul>
+</li>
+<li><a href="#message-feedentity">FeedEntity</a><ul>
+<li><a href="#message-tripupdate">TripUpdate</a><ul>
+<li><a href="#message-tripdescriptor">TripDescriptor</a><ul>
+<li><a href="#enum-schedulerelationship-1">ScheduleRelationship</a></li>
+</ul>
+</li>
+<li><a href="#message-vehicledescriptor">VehicleDescriptor</a></li>
+<li><a href="#message-stoptimeupdate">StopTimeUpdate</a><ul>
+<li><a href="#message-stoptimeevent">StopTimeEvent</a></li>
+<li><a href="#enum-schedulerelationship">ScheduleRelationship</a></li>
+<li><a href="#message-stoptimeproperties">StopTimeProperties</a></li>
+</ul>
+</li>
+<li><a href="#message-tripproperties">TripProperties</a></li>
+</ul>
+</li>
+<li><a href="#message-vehicleposition">VehiclePosition</a><ul>
+<li><a href="#message-tripdescriptor">TripDescriptor</a><ul>
+<li><a href="#enum-schedulerelationship-1">ScheduleRelationship</a></li>
+</ul>
+</li>
+<li><a href="#message-vehicledescriptor">VehicleDescriptor</a></li>
+<li><a href="#message-position">Position</a></li>
+<li><a href="#enum-vehiclestopstatus">VehicleStopStatus</a></li>
+<li><a href="#enum-congestionlevel">CongestionLevel</a></li>
+<li><a href="#enum-occupancystatus">OccupancyStatus</a></li>
+<li><a href="#message-carriagedetails">CarriageDetails</a></li>
+</ul>
+</li>
+<li><a href="#message-alert">Alert</a><ul>
+<li><a href="#message-timerange">TimeRange</a></li>
+<li><a href="#message-entityselector">EntitySelector</a><ul>
+<li><a href="#message-tripdescriptor">TripDescriptor</a><ul>
+<li><a href="#enum-schedulerelationship-1">ScheduleRelationship</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#enum-cause">Cause</a></li>
+<li><a href="#enum-effect">Effect</a></li>
+<li><a href="#message-translatedstring">TranslatedString</a><ul>
+<li><a href="#message-translation">Translation</a></li>
+</ul>
+</li>
+<li><a href="#enum-severitylevel">SeverityLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h2>
+<h2 id="message-feedmessage"><em>message</em> FeedMessage<a class="headerlink" href="#message-feedmessage" title="Permanent link">&para;</a></h2>
+<p>The contents of a feed message. Each message in the stream is obtained as a response to an appropriate HTTP GET request. A realtime feed is always defined with relation to an existing GTFS feed. All the entity ids are resolved with respect to the GTFS feed.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>header</strong></td>
+<td><a href="#message-feedheader">FeedHeader</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Metadata about this feed and feed message.</td>
+</tr>
+<tr>
+<td><strong>entity</strong></td>
+<td><a href="#message-feedentity">FeedEntity</a></td>
+<td>Conditionally required</td>
+<td>Many</td>
+<td>Contents of the feed.  If there is real-time information available for the transit system, this field must be provided.  If this field is empty, consumers should assume there is no real-time information available for the system.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-feedheader"><em>message</em> FeedHeader<a class="headerlink" href="#message-feedheader" title="Permanent link">&para;</a></h2>
+<p>Metadata about a feed, included in feed messages.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>gtfs_realtime_version</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Version of the feed specification. The current version is 2.0.</td>
+</tr>
+<tr>
+<td><strong>incrementality</strong></td>
+<td><a href="#enum-incrementality">Incrementality</a></td>
+<td>Required</td>
+<td>One</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>timestamp</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint64</a></td>
+<td>Required</td>
+<td>One</td>
+<td>This timestamp identifies the moment when the content of this feed has been created (in server time). In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). To avoid time skew between systems producing and consuming realtime information it is strongly advised to derive timestamp from a time server. It is completely acceptable to use Stratum 3 or even lower strata servers since time differences up to a couple of seconds are tolerable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-incrementality"><em>enum</em> Incrementality<a class="headerlink" href="#enum-incrementality" title="Permanent link">&para;</a></h2>
+<p>Determines whether the current fetch is incremental.</p>
+<ul>
+<li><strong>FULL_DATASET</strong>: this feed update will overwrite all preceding realtime information for the feed. Thus this update is expected to provide a full snapshot of all known realtime information.</li>
+<li><strong>DIFFERENTIAL</strong>: currently, this mode is <strong>unsupported</strong> and behavior is <strong>unspecified</strong> for feeds that use this mode. There are discussions on the <a href="http://groups.google.com/group/gtfs-realtime">GTFS Realtime mailing list</a> around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.</li>
+</ul>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FULL_DATASET</strong></td>
+</tr>
+<tr>
+<td><strong>DIFFERENTIAL</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-feedentity"><em>message</em> FeedEntity<a class="headerlink" href="#message-feedentity" title="Permanent link">&para;</a></h2>
+<p>A definition (or update) of an entity in the transit feed. If the entity is not being deleted, exactly one of 'trip_update', 'vehicle', 'alert' and 'shape' fields should be populated.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Feed-unique identifier for this entity. The ids are used only to provide incrementality support. The actual entities referenced by the feed must be specified by explicit selectors (see EntitySelector below for more info).</td>
+</tr>
+<tr>
+<td><strong>is_deleted</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">bool</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Whether this entity is to be deleted. Should be provided only for feeds with Incrementality of DIFFERENTIAL - this field should NOT be provided for feeds with Incrementality of FULL_DATASET.</td>
+</tr>
+<tr>
+<td><strong>trip_update</strong></td>
+<td><a href="#message-tripupdate">TripUpdate</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Data about the realtime departure delays of a trip.  At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>vehicle</strong></td>
+<td><a href="#message-vehicleposition">VehiclePosition</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Data about the realtime position of a vehicle. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>alert</strong></td>
+<td><a href="#message-alert">Alert</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Data about the realtime alert. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>shape</strong></td>
+<td><a href="#message-shape">Shape</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-tripupdate"><em>message</em> TripUpdate<a class="headerlink" href="#message-tripupdate" title="Permanent link">&para;</a></h2>
+<p>Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the <a href="../trip-updates/">trip updates entities</a>.</p>
+<p>Depending on the value of ScheduleRelationship, a TripUpdate can specify:</p>
+<ul>
+<li>A trip that proceeds along the schedule.</li>
+<li>A trip that proceeds along a route but has no fixed schedule.</li>
+<li>A trip that has been added or removed with regard to schedule.</li>
+<li>A new trip that is a copy of an existing trip in static GTFS. It will run at the service date and time specified in TripProperties.</li>
+</ul>
+<p>The updates can be for future, predicted arrival/departure events, or for past events that already occurred. In most cases information about past events is a measured value thus its uncertainty value is recommended to be 0. Although there could be cases when this does not hold so it is allowed to have uncertainty value different from 0 for past events. If an update's uncertainty is not 0, either the update is an approximate prediction for a trip that has not completed or the measurement is not precise or the update was a prediction for the past that has not been verified after the event occurred.</p>
+<p>If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt">GTFS trips.txt</a>):
+* the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
+* the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with <code>trip_ids</code> 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the <code>trip_update</code> entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.</p>
+<p>Note that the update can describe a trip that has already completed.To this end, it is enough to provide an update for the last stop of the trip. If the time of arrival at the last stop is in the past, the client will conclude that the whole trip is in the past (it is possible, although inconsequential, to also provide updates for preceding stops). This option is most relevant for a trip that has completed ahead of schedule, but according to the schedule, the trip is still proceeding at the current time. Removing the updates for this trip could make the client assume that the trip is still proceeding. Note that the feed provider is allowed, but not required, to purge past updates - this is one case where this would be practically useful.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>trip</strong></td>
+<td><a href="#message-tripdescriptor">TripDescriptor</a></td>
+<td>Required</td>
+<td>One</td>
+<td>The Trip that this message applies to. There can be at most one TripUpdate entity for each actual trip instance. If there is none, that means there is no prediction information available. It does <em>not</em> mean that the trip is progressing according to schedule.</td>
+</tr>
+<tr>
+<td><strong>vehicle</strong></td>
+<td><a href="#message-vehicledescriptor">VehicleDescriptor</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Additional information on the vehicle that is serving this trip.</td>
+</tr>
+<tr>
+<td><strong>stop_time_update</strong></td>
+<td><a href="#message-stoptimeupdate">StopTimeUpdate</a></td>
+<td>Conditionally required</td>
+<td>Many</td>
+<td>Updates to StopTimes for the trip (both future, i.e., predictions, and in some cases, past ones, i.e., those that already happened). The updates must be sorted by stop_sequence, and apply for all the following stops of the trip up to the next specified stop_time_update.  At least one stop_time_update must be provided for the trip unless the trip.schedule_relationship is CANCELED or DUPLICATED - if the trip is canceled, no stop_time_updates need to be provided. If the trip is duplicated, stop_time_updates may be provided to indicate real-time information for the new trip.</td>
+</tr>
+<tr>
+<td><strong>timestamp</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint64</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The most recent moment at which the vehicle's real-time progress was measured to estimate StopTimes in the future. When StopTimes in the past are provided, arrival/departure times may be earlier than this value. In POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC).</td>
+</tr>
+<tr>
+<td><strong>delay</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int32</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The current schedule deviation for the trip. Delay should only be specified when the prediction is given relative to some existing schedule in GTFS.<br>Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.<br>Delay information in StopTimeUpdates take precedent of trip-level delay information, such that trip-level delay is only propagated until the next stop along the trip with a StopTimeUpdate delay value specified.<br>Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the delay value was last updated, in order to evaluate the freshness of the data.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>trip_properties</strong></td>
+<td><a href="#message-tripproperties">TripProperties</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Provides the updated properties for the trip. <br><br><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-stoptimeevent"><em>message</em> StopTimeEvent<a class="headerlink" href="#message-stoptimeevent" title="Permanent link">&para;</a></h2>
+<p>Timing information for a single predicted event (either arrival or departure). Timing consists of delay and/or estimated time, and uncertainty.</p>
+<ul>
+<li>delay should be used when the prediction is given relative to some existing schedule in GTFS.</li>
+<li>time should be given whether there is a predicted schedule or not. If both time and delay are specified, time will take precedence (although normally, time, if given for a scheduled trip, should be equal to scheduled time in GTFS + delay).</li>
+</ul>
+<p>Uncertainty applies equally to both time and delay. The uncertainty roughly specifies the expected error in true delay (but note, we don't yet define its precise statistical meaning). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>delay</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int32</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.  Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>time</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int64</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Event as absolute time. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>uncertainty</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int32</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>If uncertainty is omitted, it is interpreted as unknown. To specify a completely certain prediction, set its uncertainty to 0.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-stoptimeupdate"><em>message</em> StopTimeUpdate<a class="headerlink" href="#message-stoptimeupdate" title="Permanent link">&para;</a></h2>
+<p>Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the <a href="#message-tripdescriptor">TripDescriptor</a> and <a href="../trip-updates/">trip updates entities</a> documentation.</p>
+<p>Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
+The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>stop_sequence</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Must be the same as in stop_times.txt in the corresponding GTFS feed.  Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty.  stop_sequence is required for trips that visit the same stop_id more than once (e.g., a loop) to disambiguate which stop the prediction is for. If <code>StopTimeProperties.assigned_stop_id</code> is populated, then <code>stop_sequence</code> must be populated.</td>
+</tr>
+<tr>
+<td><strong>stop_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Must be the same as in stops.txt in the corresponding GTFS feed. Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty. If <code>StopTimeProperties.assigned_stop_id</code> is populated, it is preferred to omit <code>stop_id</code> and use only <code>stop_sequence</code>. If <code>StopTimeProperties.assigned_stop_id</code> and <code>stop_id</code> are populated, <code>stop_id</code> must match <code>assigned_stop_id</code>.</td>
+</tr>
+<tr>
+<td><strong>arrival</strong></td>
+<td><a href="#message-stoptimeevent">StopTimeEvent</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty.</td>
+</tr>
+<tr>
+<td><strong>departure</strong></td>
+<td><a href="#message-stoptimeevent">StopTimeEvent</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty.</td>
+</tr>
+<tr>
+<td><strong>departure_occupancy_status</strong></td>
+<td><a href="#enum-occupancystatus">OccupancyStatus</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The predicted state of passenger occupancy for the vehicle immediately after departure from the given stop. If provided, stop_sequence must be provided. To provide departure_occupancy_status without providing any real-time arrival or departure predictions, populate this field and set StopTimeUpdate.schedule_relationship = NO_DATA. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>schedule_relationship</strong></td>
+<td><a href="#enum-schedulerelationship">ScheduleRelationship</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The default relationship is SCHEDULED.</td>
+</tr>
+<tr>
+<td><strong>stop_time_properties</strong></td>
+<td><a href="#message-stoptimeproperties">StopTimeProperties</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Realtime updates for certain properties defined within GTFS stop_times.txt <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-schedulerelationship"><em>enum</em> ScheduleRelationship<a class="headerlink" href="#enum-schedulerelationship" title="Permanent link">&para;</a></h2>
+<p>The relation between this StopTime and the static schedule.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+<th><em><strong>Comment</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SCHEDULED</strong></td>
+<td>The vehicle is proceeding in accordance with its static schedule of stops, although not necessarily according to the times of the schedule. This is the <strong>default</strong> behavior. At least one of arrival and departure must be provided. Frequency-based trips (GTFS frequencies.txt with exact_times = 0) should not have a SCHEDULED value and should use UNSCHEDULED instead.</td>
+</tr>
+<tr>
+<td><strong>SKIPPED</strong></td>
+<td>The stop is skipped, i.e., the vehicle will not stop at this stop. Arrival and departure are optional. When set <code>SKIPPED</code> is not propagated to subsequent stops in the same trip (i.e., the vehicle will stop at subsequent stops in the trip unless those stops also have a <code>stop_time_update</code> with <code>schedule_relationship: SKIPPED</code>). Delay from a previous stop in the trip <em>does</em> propagate over the <code>SKIPPED</code> stop. In other words, if a <code>stop_time_update</code> with an <code>arrival</code> or <code>departure</code> prediction is not set for a stop after the <code>SKIPPED</code> stop, the prediction upstream of the <code>SKIPPED</code> stop will be propagated to the stop after the <code>SKIPPED</code> stop and subsequent stops in the trip until a <code>stop_time_update</code> for a subsequent stop is provided.</td>
+</tr>
+<tr>
+<td><strong>NO_DATA</strong></td>
+<td>No data is given for this stop. It indicates that there is no realtime timing information available. When set NO_DATA is propagated through subsequent stops so this is the recommended way of specifying from which stop you do not have realtime timing information. When NO_DATA is set neither arrival nor departure should be supplied.</td>
+</tr>
+<tr>
+<td><strong>UNSCHEDULED</strong></td>
+<td>The vehicle is operating a frequency-based trip (GTFS frequencies.txt with exact_times = 0). This value should not be used for trips that are not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips containing <code>stop_time_updates</code> with <code>schedule_relationship: UNSCHEDULED</code> must also set the TripDescriptor <code>schedule_relationship: UNSCHEDULED</code> <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-stoptimeproperties"><em>message</em> StopTimeProperties<a class="headerlink" href="#message-stoptimeproperties" title="Permanent link">&para;</a></h2>
+<p>Realtime update for certain properties defined within GTFS stop_times.txt.</p>
+<p><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.<br> </p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>assigned_stop_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Supports real-time stop assignments. Refers to a <code>stop_id</code> defined in the GTFS <code>stops.txt</code>. <br> The new <code>assigned_stop_id</code> should not result in a significantly different trip experience for the end user than the <code>stop_id</code> defined in GTFS <code>stop_times.txt</code>. In other words, the end user should not view this new <code>stop_id</code> as an "unusual change" if the new stop was presented within an app without any additional context. For example, this field is intended to be used for platform assignments by using a <code>stop_id</code> that belongs to the same station as the stop originally defined in GTFS <code>stop_times.txt</code>. <br> To assign a stop without providing any real-time arrival or departure predictions, populate this field and set <code>StopTimeUpdate.schedule_relationship = NO_DATA</code>. <br> If this field is populated, <code>StopTimeUpdate.stop_sequence</code> must be populated and <code>StopTimeUpdate.stop_id</code> should not be populated. Stop assignments should be reflected in other GTFS-realtime fields as well (e.g., <code>VehiclePosition.stop_id</code>). <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-tripproperties"><em>message</em> TripProperties<a class="headerlink" href="#message-tripproperties" title="Permanent link">&para;</a></h2>
+<p>Defines updated properties of the trip</p>
+<p><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.<br>.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>trip_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Defines the identifier of a new trip that is a duplicate of an existing trip defined in (CSV) GTFS trips.txt but will start at a different service date and/or time (defined using <code>TripProperties.start_date</code> and <code>TripProperties.start_time</code>). See definition of <code>trips.trip_id</code> in (CSV) GTFS. Its value must be different than the ones used in the (CSV) GTFS. This field is required if <code>schedule_relationship</code> is <code>DUPLICATED</code>, otherwise this field must not be populated and will be ignored by consumers. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>start_date</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Service date on which the duplicated trip will be run. Must be provided in YYYYMMDD format. This field is required if <code>schedule_relationship</code> is <code>DUPLICATED</code>, otherwise this field must not be populated and will be ignored by consumers. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>start_time</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Defines the departure start time of the trip when it’s duplicated. See definition of <code>stop_times.departure_time</code> in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset between the original trip <code>departure_time</code> and this field. For example, if a GTFS trip has stop A with a <code>departure_time</code> of <code>10:00:00</code> and stop B with <code>departure_time</code> of <code>10:01:00</code>, and this field is populated with the value of <code>10:30:00</code>, stop B on the duplicated trip will have a scheduled <code>departure_time</code> of <code>10:31:00</code>. Real-time prediction <code>delay</code> values are applied to this calculated schedule time to determine the predicted time. For example, if a departure <code>delay</code> of <code>30</code> is provided for stop B, then the predicted departure time is <code>10:31:30</code>. Real-time prediction <code>time</code> values do not have any offset applied to them and indicate the predicted time as provided.  For example, if a departure <code>time</code> representing 10:31:30 is provided for stop B, then the predicted departure time is <code>10:31:30</code>.This field is required if <code>schedule_relationship</code> is <code>DUPLICATED</code>, otherwise this field must not be populated and will be ignored by consumers. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>shape_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Specifies the shape of the vehicle travel path for this trip when it differs from the original. Refers to a shape defined in the (CSV) GTFS or a new shape entity in a real-time feed. See definition of <code>trips.shape_id</code> in (CSV) GTFS. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-vehicleposition"><em>message</em> VehiclePosition<a class="headerlink" href="#message-vehicleposition" title="Permanent link">&para;</a></h2>
+<p>Realtime positioning information for a given vehicle.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>trip</strong></td>
+<td><a href="#message-tripdescriptor">TripDescriptor</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The Trip that this vehicle is serving. Can be empty or partial if the vehicle can not be identified with a given trip instance.</td>
+</tr>
+<tr>
+<td><strong>vehicle</strong></td>
+<td><a href="#message-vehicledescriptor">VehicleDescriptor</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Additional information on the vehicle that is serving this trip. Each entry should have a <strong>unique</strong> vehicle id.</td>
+</tr>
+<tr>
+<td><strong>position</strong></td>
+<td><a href="#message-position">Position</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Current position of this vehicle.</td>
+</tr>
+<tr>
+<td><strong>current_stop_sequence</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The stop sequence index of the current stop. The meaning of current_stop_sequence (i.e., the stop that it refers to) is determined by current_status. If current_status is missing IN_TRANSIT_TO is assumed.</td>
+</tr>
+<tr>
+<td><strong>stop_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Identifies the current stop. The value must be the same as in stops.txt in the corresponding GTFS feed. If <code>StopTimeProperties.assigned_stop_id</code> is used to assign a <code>stop_id</code>, this field should also reflect the change in <code>stop_id</code>.</td>
+</tr>
+<tr>
+<td><strong>current_status</strong></td>
+<td><a href="#enum-vehiclestopstatus">VehicleStopStatus</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The exact status of the vehicle with respect to the current stop. Ignored if current_stop_sequence is missing.</td>
+</tr>
+<tr>
+<td><strong>timestamp</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint64</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Moment at which the vehicle's position was measured. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC).</td>
+</tr>
+<tr>
+<td><strong>congestion_level</strong></td>
+<td><a href="#enum-congestionlevel">CongestionLevel</a></td>
+<td>Optional</td>
+<td>One</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>occupancy_status</strong></td>
+<td><a href="#enum-occupancystatus">OccupancyStatus</a></td>
+<td><em>Optional</em></td>
+<td>One</td>
+<td>The state of passenger occupancy for the vehicle or carriage. If multi_carriage_details is populated with per-carriage OccupancyStatus, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>occupancy_percentage</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>A percentage value indicating the degree of passenger occupancy in the vehicle. The value 100 should represent the total maximum occupancy the vehicle was designed for, including both seating and standing capacity, and current operating regulations allow. The value may exceed 100 if there are more passengers than the maximum designed capacity. The precision of occupancy_percentage should be low enough that individual passengers cannot be tracked boarding or alighting the vehicle. If multi_carriage_details is populated with per-carriage occupancy_percentage, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>multi_carriage_details</strong></td>
+<td><a href="#message-CarriageDetails">CarriageDetails</a></td>
+<td>Optional</td>
+<td>Many</td>
+<td>Details of the multiple carriages of this given vehicle. The first occurrence represents the first carriage of the vehicle, <strong>given the current direction of travel</strong>. The number of occurrences of the multi_carriage_details field represents the number of carriages of the vehicle. It also includes non boardable carriages, like engines, maintenance carriages, etc… as they provide valuable information to passengers about where to stand on a platform.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-vehiclestopstatus"><em>enum</em> VehicleStopStatus<a class="headerlink" href="#enum-vehiclestopstatus" title="Permanent link">&para;</a></h2>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+<th><em><strong>Comment</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>INCOMING_AT</strong></td>
+<td>The vehicle is just about to arrive at the stop (on a stop display, the vehicle symbol typically flashes).</td>
+</tr>
+<tr>
+<td><strong>STOPPED_AT</strong></td>
+<td>The vehicle is standing at the stop.</td>
+</tr>
+<tr>
+<td><strong>IN_TRANSIT_TO</strong></td>
+<td>The vehicle has departed the previous stop and is in transit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-congestionlevel"><em>enum</em> CongestionLevel<a class="headerlink" href="#enum-congestionlevel" title="Permanent link">&para;</a></h2>
+<p>Congestion level that is affecting this vehicle.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UNKNOWN_CONGESTION_LEVEL</strong></td>
+</tr>
+<tr>
+<td><strong>RUNNING_SMOOTHLY</strong></td>
+</tr>
+<tr>
+<td><strong>STOP_AND_GO</strong></td>
+</tr>
+<tr>
+<td><strong>CONGESTION</strong></td>
+</tr>
+<tr>
+<td><strong>SEVERE_CONGESTION</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-occupancystatus"><em>enum OccupancyStatus</em><a class="headerlink" href="#enum-occupancystatus" title="Permanent link">&para;</a></h2>
+<p>The state of passenger occupancy for the vehicle or carriage.</p>
+<p>Individual producers may not publish all OccupancyStatus values. Therefore, consumers must not assume that the OccupancyStatus values follow a linear scale. Consumers should represent OccupancyStatus values as the state indicated and intended by the producer. Likewise, producers must use OccupancyStatus values that correspond to actual vehicle occupancy states.</p>
+<p>For describing passenger occupancy levels on a linear scale, see <code>occupancy_percentage</code>.</p>
+<p><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</p>
+<p><strong><em>Values</em></strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+<th><em><strong>Comment</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><strong>EMPTY</strong></em></td>
+<td><em>The vehicle is considered empty by most measures, and has few or no passengers onboard, but is still accepting passengers.</em></td>
+</tr>
+<tr>
+<td><em><strong>MANY_SEATS_AVAILABLE</strong></em></td>
+<td><em>The vehicle or carriage has a large number of seats available. The amount of free seats out of the total seats available to be considered large enough to fall into this category is determined at the discretion of the producer.</em></td>
+</tr>
+<tr>
+<td><em><strong>FEW_SEATS_AVAILABLE</strong></em></td>
+<td><em>The vehicle or carriage has a small number of seats available. The amount of free seats out of the total seats available to be considered small enough to fall into this category is determined at the discretion of the producer.</em></td>
+</tr>
+<tr>
+<td><em><strong>STANDING_ROOM_ONLY</strong></em></td>
+<td><em>The vehicle or carriage can currently accommodate only standing passengers.</em></td>
+</tr>
+<tr>
+<td><em><strong>CRUSHED_STANDING_ROOM_ONLY</strong></em></td>
+<td><em>The vehicle or carriage can currently accommodate only standing passengers and has limited space for them.</em></td>
+</tr>
+<tr>
+<td><em><strong>FULL</strong></em></td>
+<td><em>The vehicle is considered full by most measures, but may still be allowing passengers to board.</em></td>
+</tr>
+<tr>
+<td><em><strong>NOT_ACCEPTING_PASSENGERS</strong></em></td>
+<td><em>The vehicle or carriage is not accepting passengers. The vehicle or carriage usually accepts passengers for boarding.</em></td>
+</tr>
+<tr>
+<td><em><strong>NO_DATA_AVAILABLE</strong></em></td>
+<td><em>The vehicle or carriage doesn't have any occupancy data available at that time.</em></td>
+</tr>
+<tr>
+<td><em><strong>NOT_BOARDABLE</strong></em></td>
+<td><em>The vehicle or carriage is not boardable and never accepts passengers. Useful for special vehicles or carriages (engine, maintenance carriage, etc…).</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-carriagedetails"><em>message</em> CarriageDetails<a class="headerlink" href="#message-carriagedetails" title="Permanent link">&para;</a></h2>
+<p>Carriage specific details, used for vehicles composed of several carriages.</p>
+<p><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Identification of the carriage. Should be unique per vehicle. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>label</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>User visible label that may be shown to the passenger to help identify the carriage. Example: "7712", "Car ABC-32", etc... <br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>occupancy_status</strong></td>
+<td><a href="#enum-occupancystatus">OccupancyStatus</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Occupancy status for this given carriage, in this vehicle. Default is set to <code>NO_DATA_AVAILABLE</code>.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>occupancy_percentage</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int32</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Occupancy percentage for this given carriage, in this vehicle. Follows the same rules as "VehiclePosition.occupancy_percentage". Use -1 in case data is not available for this given carriage.<br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>carriage_sequence</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Identifies the order of this carriage with respect to the other carriages in the vehicle's list of CarriageStatus. The first carriage in the direction of travel must have a value of 1. The second value corresponds to the second carriage in the direction of travel and must have a value of 2, and so forth. For example, the first carriage in the direction of travel has a value of 1. If the second carriage in the direction of travel has a value of 3, consumers will discard data for all carriages (i.e., the multi_carriage_details field). Carriages without data must be represented with a valid carriage_sequence number and the fields without data should be omitted (alternately, those fields could also be included and set to the "no data" values). <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-alert"><em>message</em> Alert<a class="headerlink" href="#message-alert" title="Permanent link">&para;</a></h2>
+<p>An alert, indicating some sort of incident in the public transit network.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>active_period</strong></td>
+<td><a href="#message-timerange">TimeRange</a></td>
+<td>Optional</td>
+<td>Many</td>
+<td>Time when the alert should be shown to the user. If missing, the alert will be shown as long as it appears in the feed. If multiple ranges are given, the alert will be shown during all of them.</td>
+</tr>
+<tr>
+<td><strong>informed_entity</strong></td>
+<td><a href="#message-entityselector">EntitySelector</a></td>
+<td>Required</td>
+<td>Many</td>
+<td>Entities whose users we should notify of this alert.  At least one informed_entity must be provided.</td>
+</tr>
+<tr>
+<td><strong>cause</strong></td>
+<td><a href="#enum-cause">Cause</a></td>
+<td>Optional</td>
+<td>One</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>effect</strong></td>
+<td><a href="#enum-effect">Effect</a></td>
+<td>Optional</td>
+<td>One</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The URL which provides additional information about the alert.</td>
+</tr>
+<tr>
+<td><strong>header_text</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Header for the alert. This plain-text string will be highlighted, for example in boldface.</td>
+</tr>
+<tr>
+<td><strong>description_text</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Description for the alert. This plain-text string will be formatted as the body of the alert (or shown on an explicit "expand" request by the user). The information in the description should add to the information of the header.</td>
+</tr>
+<tr>
+<td><strong>tts_header_text</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Text containing the alert's header to be used for text-to-speech implementations. This field is the text-to-speech version of header_text. It should contain the same information as header_text but formatted such that it can read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.)</td>
+</tr>
+<tr>
+<td><strong>tts_description_text</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Text containing a description for the alert to be used for text-to-speech implementations. This field is the text-to-speech version of description_text. It should contain the same information as description_text but formatted such that it can be read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.)</td>
+</tr>
+<tr>
+<td><strong>severity_level</strong></td>
+<td><a href="#enum-severitylevel">SeverityLevel</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Severity of the alert.</td>
+</tr>
+<tr>
+<td><strong>image</strong></td>
+<td><a href="#message-translatedimage">TranslatedImage</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>TranslatedImage to be displayed along the alert text. Used to explain visually the alert effect of a detour, station closure, etc. The image should enhance the understanding of the alert and must not be the only location of essential information. The following types of images are discouraged : image containing mainly text, marketing or branded images that add no additional information. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>image_alternative_text</strong></td>
+<td><a href="#message-translatedstring">TranslatedString</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Text describing the appearance of the linked image in the <code>image</code> field (e.g., in case the image can't be displayed or the user can't see the image for accessibility reasons). See the HTML <a href="https://html.spec.whatwg.org/#alt">spec for alt image text</a>. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-cause"><em>enum</em> Cause<a class="headerlink" href="#enum-cause" title="Permanent link">&para;</a></h2>
+<p>Cause of this alert.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UNKNOWN_CAUSE</strong></td>
+</tr>
+<tr>
+<td><strong>OTHER_CAUSE</strong></td>
+</tr>
+<tr>
+<td><strong>TECHNICAL_PROBLEM</strong></td>
+</tr>
+<tr>
+<td><strong>STRIKE</strong></td>
+</tr>
+<tr>
+<td><strong>DEMONSTRATION</strong></td>
+</tr>
+<tr>
+<td><strong>ACCIDENT</strong></td>
+</tr>
+<tr>
+<td><strong>HOLIDAY</strong></td>
+</tr>
+<tr>
+<td><strong>WEATHER</strong></td>
+</tr>
+<tr>
+<td><strong>MAINTENANCE</strong></td>
+</tr>
+<tr>
+<td><strong>CONSTRUCTION</strong></td>
+</tr>
+<tr>
+<td><strong>POLICE_ACTIVITY</strong></td>
+</tr>
+<tr>
+<td><strong>MEDICAL_EMERGENCY</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-effect"><em>enum</em> Effect<a class="headerlink" href="#enum-effect" title="Permanent link">&para;</a></h2>
+<p>The effect of this problem on the affected entity.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NO_SERVICE</strong></td>
+</tr>
+<tr>
+<td><strong>REDUCED_SERVICE</strong></td>
+</tr>
+<tr>
+<td><strong>SIGNIFICANT_DELAYS</strong></td>
+</tr>
+<tr>
+<td><strong>DETOUR</strong></td>
+</tr>
+<tr>
+<td><strong>ADDITIONAL_SERVICE</strong></td>
+</tr>
+<tr>
+<td><strong>MODIFIED_SERVICE</strong></td>
+</tr>
+<tr>
+<td><strong>OTHER_EFFECT</strong></td>
+</tr>
+<tr>
+<td><strong>UNKNOWN_EFFECT</strong></td>
+</tr>
+<tr>
+<td><strong>STOP_MOVED</strong></td>
+</tr>
+<tr>
+<td><strong>NO_EFFECT</strong></td>
+</tr>
+<tr>
+<td><strong>ACCESSIBILITY_ISSUE</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-severitylevel"><em>enum</em> SeverityLevel<a class="headerlink" href="#enum-severitylevel" title="Permanent link">&para;</a></h2>
+<p>The severity of the alert.</p>
+<p><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UNKNOWN_SEVERITY</strong></td>
+</tr>
+<tr>
+<td><strong>INFO</strong></td>
+</tr>
+<tr>
+<td><strong>WARNING</strong></td>
+</tr>
+<tr>
+<td><strong>SEVERE</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-timerange"><em>message</em> TimeRange<a class="headerlink" href="#message-timerange" title="Permanent link">&para;</a></h2>
+<p>A time interval. The interval is considered active at time <code>t</code> if <code>t</code> is greater than or equal to the start time and less than the end time.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>start</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint64</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>Start time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval starts at minus infinity.  If a TimeRange is provided, either start or end must be provided - both fields cannot be empty.</td>
+</tr>
+<tr>
+<td><strong>end</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint64</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>End time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval ends at plus infinity. If a TimeRange is provided, either start or end must be provided - both fields cannot be empty.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-position"><em>message</em> Position<a class="headerlink" href="#message-position" title="Permanent link">&para;</a></h2>
+<p>A geographic position of a vehicle.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>latitude</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">float</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Degrees North, in the WGS-84 coordinate system.</td>
+</tr>
+<tr>
+<td><strong>longitude</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">float</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Degrees East, in the WGS-84 coordinate system.</td>
+</tr>
+<tr>
+<td><strong>bearing</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">float</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Bearing, in degrees, clockwise from True North, i.e., 0 is North and 90 is East. This can be the compass bearing, or the direction towards the next stop or intermediate location. This should not be deduced from the sequence of previous positions, which clients can compute from previous data.</td>
+</tr>
+<tr>
+<td><strong>odometer</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">double</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Odometer value, in meters.</td>
+</tr>
+<tr>
+<td><strong>speed</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">float</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Momentary speed measured by the vehicle, in meters per second.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-tripdescriptor"><em>message</em> TripDescriptor<a class="headerlink" href="#message-tripdescriptor" title="Permanent link">&para;</a></h2>
+<p>A descriptor that identifies a single instance of a GTFS trip.</p>
+<p>To specify a single trip instance, in many cases a <code>trip_id</code> by itself is sufficient. However, the following cases require additional information to resolve to a single trip instance:
+* For trips defined in frequencies.txt, <code>start_date</code> and <code>start_time</code> are required in addition to <code>trip_id</code>
+* If the trip lasts for more than 24 hours, or is delayed such that it would collide with a scheduled trip on the following day, then <code>start_date</code> is required in addition to <code>trip_id</code>
+* If the <code>trip_id</code> field can't be provided, then <code>route_id</code>, <code>direction_id</code>, <code>start_date</code>, and <code>start_time</code> must all be provided</p>
+<p>In all cases, if <code>route_id</code> is provided in addition to <code>trip_id</code>, then the <code>route_id</code> must be the same <code>route_id</code> as assigned to the given trip in GTFS trips.txt.</p>
+<p>The <code>trip_id</code> field cannot, by itself or in combination with other TripDescriptor fields, be used to identify multiple trip instances. For example, a TripDescriptor should never specify trip_id by itself for GTFS frequencies.txt exact_times=0 trips because start_time is also required to resolve to a single trip instance starting at a specific time of the day. If the TripDescriptor does not resolve to a single trip instance (i.e., it resolves to zero or multiple trip instances), it is considered an error and the entity containing the erroneous TripDescriptor may be discarded by consumers.</p>
+<p>Note that if the trip_id is not known, then station sequence ids in TripUpdate are not sufficient, and stop_ids must be provided as well. In addition, absolute arrival/departure times must be provided.</p>
+<p>TripDescriptor.route_id cannot be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>trip_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The trip_id from the GTFS feed that this selector refers to. For non frequency-based trips (trips not defined in GTFS frequencies.txt), this field is enough to uniquely identify the trip. For frequency-based trips defined in GTFS frequencies.txt, trip_id, start_time, and start_date are all required. For scheduled-based trips (trips not defined in GTFS frequencies.txt), trip_id can only be omitted if the trip can be uniquely identified by a combination of route_id, direction_id, start_time, and start_date, and all those fields are provided. When schedule_relationship is DUPLICATED within a TripUpdate, the trip_id identifies the trip from static GTFS to be duplicated. When schedule_relationship is DUPLICATED within a VehiclePosition, the trip_id identifies the new duplicate trip and must contain the value for the corresponding TripUpdate.TripProperties.trip_id.</td>
+</tr>
+<tr>
+<td><strong>route_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The route_id from the GTFS that this selector refers to. If trip_id is omitted, route_id, direction_id, start_time, and schedule_relationship=SCHEDULED must all be set to identify a trip instance. TripDescriptor.route_id should not be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead.</td>
+</tr>
+<tr>
+<td><strong>direction_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The direction_id from the GTFS feed trips.txt file, indicating the direction of travel for trips this selector refers to. If trip_id is omitted, direction_id must be provided. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.<br></td>
+</tr>
+<tr>
+<td><strong>start_time</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The initially scheduled start time of this trip instance. When the trip_id corresponds to a non-frequency-based trip, this field should either be omitted or be equal to the value in the GTFS feed. When the trip_id correponds to a frequency-based trip defined in GTFS frequencies.txt, start_time is required and must be specified for trip updates and vehicle positions. If the trip corresponds to exact_times=1 GTFS record, then start_time must be some multiple (including zero) of headway_secs later than frequencies.txt start_time for the corresponding time period. If the trip corresponds to exact_times=0, then its start_time may be arbitrary, and is initially expected to be the first departure of the trip. Once established, the start_time of this frequency-based exact_times=0 trip should be considered immutable, even if the first departure time changes -- that time change may instead be reflected in a StopTimeUpdate. If trip_id is omitted, start_time must be provided. Format and semantics of the field is same as that of GTFS/frequencies.txt/start_time, e.g., 11:15:35 or 25:15:35.</td>
+</tr>
+<tr>
+<td><strong>start_date</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The start date of this trip instance in YYYYMMDD format. For scheduled trips (trips not defined in GTFS frequencies.txt), this field must be provided to disambiguate trips that are so late as to collide with a scheduled trip on a next day. For example, for a train that departs 8:00 and 20:00 every day, and is 12 hours late, there would be two distinct trips on the same time. This field can be provided but is not mandatory for schedules in which such collisions are impossible - for example, a service running on hourly schedule where a vehicle that is one hour late is not considered to be related to schedule anymore. This field is required for frequency-based trips defined in GTFS frequencies.txt. If trip_id is omitted, start_date must be provided.</td>
+</tr>
+<tr>
+<td><strong>schedule_relationship</strong></td>
+<td><a href="#enum-schedulerelationship-1">ScheduleRelationship</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The relation between this trip and the static schedule. If TripDescriptor is provided in an Alert <code>EntitySelector</code>, the <code>schedule_relationship</code> field is ignored by consumers when identifying the matching trip instance.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enum-schedulerelationship_1"><em>enum</em> ScheduleRelationship<a class="headerlink" href="#enum-schedulerelationship_1" title="Permanent link">&para;</a></h2>
+<p>The relation between this trip and the static schedule. If a trip is done in accordance with temporary schedule, not reflected in GTFS, then it shouldn't be marked as SCHEDULED, but marked as ADDED.</p>
+<p><strong>Values</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Value</strong></em></th>
+<th><em><strong>Comment</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SCHEDULED</strong></td>
+<td>Trip that is running in accordance with its GTFS schedule, or is close enough to the scheduled trip to be associated with it.</td>
+</tr>
+<tr>
+<td><strong>ADDED</strong></td>
+<td>An extra trip that was added in addition to a running schedule, for example, to replace a broken vehicle or to respond to sudden passenger load. <em>NOTE: Currently, behavior is unspecified for feeds that use this mode. There are discussions on the GTFS GitHub <a href="https://github.com/google/transit/issues/106">(1)</a> <a href="https://github.com/google/transit/pull/221">(2)</a> <a href="https://github.com/google/transit/pull/219">(3)</a> around fully specifying or deprecating ADDED trips and the documentation will be updated when those discussions are finalized.</em></td>
+</tr>
+<tr>
+<td><strong>UNSCHEDULED</strong></td>
+<td>A trip that is running with no schedule associated to it - this value is used to identify trips defined in GTFS frequencies.txt with exact_times = 0. It should not be used to describe trips not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips with <code>schedule_relationship: UNSCHEDULED</code> must also set all StopTimeUpdates <code>schedule_relationship: UNSCHEDULED</code></td>
+</tr>
+<tr>
+<td><strong>CANCELED</strong></td>
+<td>A trip that existed in the schedule but was removed.</td>
+</tr>
+<tr>
+<td><strong>DUPLICATED</strong></td>
+<td>A new trip that is the same as an existing scheduled trip except for service start date and time. Used with <code>TripUpdate.TripProperties.trip_id</code>, <code>TripUpdate.TripProperties.start_date</code>, and <code>TripUpdate.TripProperties.start_time</code> to copy an existing trip from static GTFS but start at a different service date and/or time. Duplicating a trip is allowed if the service related to the original trip in (CSV) GTFS (in <code>calendar.txt</code> or <code>calendar_dates.txt</code>) is operating within the next 30 days. The trip to be duplicated is identified via <code>TripUpdate.TripDescriptor.trip_id</code>. <br><br> This enumeration does not modify the existing trip referenced by <code>TripUpdate.TripDescriptor.trip_id</code> - if a producer wants to cancel the original trip, it must publish a separate <code>TripUpdate</code> with the value of CANCELED. Trips defined in GTFS <code>frequencies.txt</code> with <code>exact_times</code> that is empty or equal to <code>0</code> cannot be duplicated. The <code>VehiclePosition.TripDescriptor.trip_id</code> for the new trip must contain the matching value from <code>TripUpdate.TripProperties.trip_id</code> and <code>VehiclePosition.TripDescriptor.ScheduleRelationship</code> must also be set to <code>DUPLICATED</code>.  <br><br><em>Existing producers and consumers that were using the ADDED enumeration to represent duplicated trips must follow the <a href="/gtfs-realtime/spec/en/examples/migration-duplicated.md">migration guide</a> to transition to the DUPLICATED enumeration.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-vehicledescriptor"><em>message</em> VehicleDescriptor<a class="headerlink" href="#message-vehicledescriptor" title="Permanent link">&para;</a></h2>
+<p>Identification information for the vehicle performing the trip.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>Internal system identification of the vehicle. Should be <strong>unique</strong> per vehicle, and is used for tracking the vehicle as it proceeds through the system. This id should not be made visible to the end-user; for that purpose use the <strong>label</strong> field</td>
+</tr>
+<tr>
+<td><strong>label</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>User visible label, i.e., something that must be shown to the passenger to help identify the correct vehicle.</td>
+</tr>
+<tr>
+<td><strong>license_plate</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Optional</td>
+<td>One</td>
+<td>The license plate of the vehicle.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-entityselector"><em>message</em> EntitySelector<a class="headerlink" href="#message-entityselector" title="Permanent link">&para;</a></h2>
+<p>A selector for an entity in a GTFS feed. The values of the fields should correspond to the appropriate fields in the GTFS feed. At least one specifier must be given. If several are given, they should be interpreted as being joined by the logical <code>AND</code> operator.  Additionally, the combination of specifiers must match the corresponding information in the GTFS feed.  In other words, in order for an alert to apply to an entity in GTFS it must match all of the provided EntitySelector fields.  For example, an EntitySelector that includes the fields <code>route_id: "5"</code> and <code>route_type: "3"</code> applies only to the <code>route_id: "5"</code> bus - it does not apply to any other routes of <code>route_type: "3"</code>.  If a producer wants an alert to apply to <code>route_id: "5"</code> as well as <code>route_type: "3"</code>, it should provide two separate EntitySelectors, one referencing <code>route_id: "5"</code> and another referencing <code>route_type: "3"</code>.</p>
+<p>At least one specifier must be given - all fields in an EntitySelector cannot be empty.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>agency_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The agency_id from the GTFS feed that this selector refers to.</td>
+</tr>
+<tr>
+<td><strong>route_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The route_id from the GTFS that this selector refers to. If direction_id is provided, route_id must also be provided.</td>
+</tr>
+<tr>
+<td><strong>route_type</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">int32</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The route_type from the GTFS that this selector refers to.</td>
+</tr>
+<tr>
+<td><strong>direction_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">uint32</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The direction_id from the GTFS feed trips.txt file, used to select all trips in one direction for a route, specified by route_id. If direction_id is provided, route_id must also be provided. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.<br></td>
+</tr>
+<tr>
+<td><strong>trip</strong></td>
+<td><a href="#message-tripdescriptor">TripDescriptor</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The trip instance from the GTFS that this selector refers to. This TripDescriptor must resolve to a single trip instance in the GTFS data (e.g., a producer cannot provide only a trip_id for exact_times=0 trips). If the ScheduleRelationship field is populated within this TripDescriptor it will be ignored by consumers when attempting to identify the GTFS trip.</td>
+</tr>
+<tr>
+<td><strong>stop_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>The stop_id from the GTFS feed that this selector refers to.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-translatedstring"><em>message</em> TranslatedString<a class="headerlink" href="#message-translatedstring" title="Permanent link">&para;</a></h2>
+<p>An internationalized message containing per-language versions of a snippet of text or a URL. One of the strings from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>translation</strong></td>
+<td><a href="#message-translation">Translation</a></td>
+<td>Required</td>
+<td>Many</td>
+<td>At least one translation must be provided.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-translation"><em>message</em> Translation<a class="headerlink" href="#message-translation" title="Permanent link">&para;</a></h2>
+<p>A localized string mapped to a language.</p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>text</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>A UTF-8 string containing the message.</td>
+</tr>
+<tr>
+<td><strong>language</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-translatedimage"><em>message</em> TranslatedImage<a class="headerlink" href="#message-translatedimage" title="Permanent link">&para;</a></h2>
+<p>An internationalized message containing per-language versions of an image. One of the images from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.</p>
+<p><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>localized_image</strong></td>
+<td><a href="#message-localizedimage">LocalizedImage</a></td>
+<td>Required</td>
+<td>Many</td>
+<td>At least one localized image must be provided.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-localizedimage"><em>message</em> LocalizedImage<a class="headerlink" href="#message-localizedimage" title="Permanent link">&para;</a></h2>
+<p>A localized image URL mapped to a language.</p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>url</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.</td>
+</tr>
+<tr>
+<td><strong>media_type</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>IANA media type as to specify the type of image to be displayed. The type must start with "image/"</td>
+</tr>
+<tr>
+<td><strong>language</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Conditionally required</td>
+<td>One</td>
+<td>BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-shape"><em>message</em> Shape<a class="headerlink" href="#message-shape" title="Permanent link">&para;</a></h2>
+<p>Describes the physical path that a vehicle takes when the shape is not part of the (CSV) GTFS, such as for an ad-hoc detour. Shapes belong to Trips and consist of an encoded polyline for more efficient transmission.  Shapes do not need to intercept the location of Stops exactly, but all Stops on a trip should lie within a small distance of the shape for that trip, i.e. close to straight line segments connecting the shape points</p>
+<p><strong>Caution:</strong> this message is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.<br>.</p>
+<p><strong>Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th><em><strong>Field Name</strong></em></th>
+<th><em><strong>Type</strong></em></th>
+<th><em><strong>Required</strong></em></th>
+<th><em><strong>Cardinality</strong></em></th>
+<th><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>shape_id</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Identifier of the shape. Must be different than any <code>shape_id</code> defined in the (CSV) GTFS. <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+<tr>
+<td><strong>encoded_polyline</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
+<td>Required</td>
+<td>One</td>
+<td>Encoded polyline representation of the shape. This polyline must contain at least two points. For more information about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm <br><br><strong>Caution:</strong> this field is still <strong>experimental</strong>, and subject to change. It may be formally adopted in the future.</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        <c>Maintained by </c>
+        <a class="footer-link" href="https://mobilitydata.org/" target="_blank" rel="noopener">
+          <!-- <svg
+            class="only-light"
+            width="25%"
+            height="25%"
+            style="vertical-align:middle"
+            style="float:left"
+            version="1.1"
+            id="Calque_1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 850.40002 205.24001"
+            xml:space="preserve"
+            sodipodi:docname="md-black.svg"
+            inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg"><defs
+            id="defs39" /><sodipodi:namedview
+            id="namedview37"
+            pagecolor="#505050"
+            bordercolor="#ffffff"
+            borderopacity="1"
+            inkscape:pageshadow="0"
+            inkscape:pageopacity="0"
+            inkscape:pagecheckerboard="1"
+            showgrid="false"
+            inkscape:zoom="1.2323559"
+            inkscape:cx="224.77273"
+            inkscape:cy="150.11897"
+            inkscape:window-width="1440"
+            inkscape:window-height="847"
+            inkscape:window-x="0"
+            inkscape:window-y="25"
+            inkscape:window-maximized="1"
+            inkscape:current-layer="Calque_1"
+            fit-margin-top="0"
+            fit-margin-left="0"
+            fit-margin-right="0"
+            fit-margin-bottom="0" />
+         <style
+            type="text/css"
+            id="style2">
+           .st0{fill:#19132D;}
+         </style>
+         <g
+            id="g32"
+            style="fill:#000000"
+            transform="translate(-31.33,-15.87)">
+           <path
+            class="st0"
+            d="m 322.73,81.87 h -12.08 c -0.37,0 -0.7,0.19 -0.89,0.51 L 287.48,115.86 265.1,82.37 c -0.19,-0.31 -0.52,-0.51 -0.89,-0.51 h -12.08 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 13.42 c 0.55,0 1,-0.45 1,-1 v -43.7 c 0,-0.14 0.18,-0.19 0.25,-0.07 l 19.81,28.8 c 0.19,0.3 0.52,0.46 0.87,0.47 0.35,0 0.67,-0.18 0.87,-0.48 l 19.59,-29.19 c 0.07,-0.12 0.25,-0.07 0.25,0.07 l 0.22,44.05 c 0,0.58 0.47,1.05 1.04,1.05 h 13.28 c 0.55,0 1,-0.45 1,-1 V 82.86 c 0,-0.55 -0.45,-0.99 -1,-0.99 z"
+            id="path4"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 360.01,101.15 c -16.28,0 -29.03,12.42 -29.03,28.28 0,15.86 12.75,28.28 29.03,28.28 16.34,0 29.14,-12.42 29.14,-28.28 0,-15.86 -12.8,-28.28 -29.14,-28.28 z m 13.58,28.28 c 0,7.76 -5.71,13.4 -13.58,13.4 -7.81,0 -13.47,-5.64 -13.47,-13.4 0,-7.76 5.67,-13.4 13.47,-13.4 7.87,0 13.58,5.63 13.58,13.4 z"
+            id="path6"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 427.6,101.15 c -6.77,0 -12.25,2.05 -16.35,6.11 v -24.4 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 v -3.66 c 4.1,4.06 9.59,6.11 16.35,6.11 7.2,0 13.95,-2.9 19,-8.17 5.09,-5.31 7.9,-12.45 7.9,-20.11 0,-7.66 -2.8,-14.8 -7.9,-20.11 -5.06,-5.26 -11.81,-8.16 -19,-8.16 z m 11.34,28.28 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.18,0 13.9,5.63 13.9,13.71 z"
+            id="path8"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 469.41,80.31 c -4.83,0 -8.9,4.02 -8.9,8.79 0,4.71 4.08,8.69 8.9,8.69 4.96,0 9,-3.9 9,-8.69 0,-4.77 -4.12,-8.79 -9,-8.79 z"
+            id="path10"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 476.24,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 51.66 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z"
+            id="path12"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 504.74,78.76 h -13.56 c -0.55,0 -1,0.45 -1,1 v 75.5 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 v -75.5 c 0,-0.56 -0.45,-1 -1,-1 z"
+            id="path14"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 532.65,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 51.66 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z"
+            id="path16"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 525.82,80.31 c -4.83,0 -8.9,4.02 -8.9,8.79 0,4.71 4.08,8.69 8.9,8.69 4.96,0 9,-3.9 9,-8.69 0.01,-4.77 -4.12,-8.79 -9,-8.79 z"
+            id="path18"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="M 576.69,102.6 H 565.65 V 89.08 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 13.52 h -8.27 c -0.55,0 -1,0.45 -1,1 v 12.67 c 0,0.55 0.45,1 1,1 h 8.27 v 20.66 c 0,6.93 1.56,11.56 4.91,14.57 3.13,2.81 7.86,4.18 14.64,4.18 2.17,0 4.55,-0.14 7.15,-0.42 0.51,-0.05 0.89,-0.48 0.89,-0.99 v -11.95 c 0,-0.27 -0.11,-0.54 -0.31,-0.72 -0.2,-0.19 -0.47,-0.29 -0.74,-0.27 -4.86,0.25 -8.41,0.32 -9.95,-1.14 -0.71,-0.67 -1.04,-1.7 -1.04,-3.25 v -20.66 h 11.04 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0.01,-0.55 -0.44,-1 -0.99,-1 z"
+            id="path20"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="M 676.43,81.87 H 646.9 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 29.53 c 10.15,0 19.49,-3.82 26.31,-10.76 6.77,-6.89 10.5,-16.28 10.5,-26.44 0,-10.16 -3.73,-19.55 -10.5,-26.44 -6.82,-6.93 -16.16,-10.75 -26.31,-10.75 z m 20.93,37.19 c 0,12.77 -8.61,21.69 -20.93,21.69 H 662.42 V 97.37 h 14.01 c 12.32,0 20.93,8.92 20.93,21.69 z"
+            id="path22"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="M 775.16,102.6 H 761.6 c -0.55,0 -1,0.45 -1,1 v 3.7 c -4.15,-4.03 -9.8,-6.15 -16.46,-6.15 -7.15,0 -13.87,2.9 -18.91,8.17 -5.08,5.31 -7.88,12.45 -7.88,20.1 0,7.65 2.8,14.79 7.88,20.11 5.04,5.27 11.76,8.17 18.91,8.17 6.66,0 12.3,-2.12 16.46,-6.15 v 3.7 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z m -14.56,26.83 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.19,0 13.9,5.63 13.9,13.71 z"
+            id="path24"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="M 818.36,102.6 H 807.32 V 89.08 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 13.52 h -8.27 c -0.55,0 -1,0.45 -1,1 v 12.67 c 0,0.55 0.45,1 1,1 h 8.27 v 20.66 c 0,6.93 1.56,11.56 4.91,14.57 3.13,2.81 7.86,4.18 14.64,4.18 2.17,0 4.55,-0.14 7.15,-0.42 0.51,-0.05 0.89,-0.48 0.89,-0.99 v -11.95 c 0,-0.27 -0.11,-0.54 -0.31,-0.72 -0.2,-0.19 -0.47,-0.29 -0.74,-0.27 -4.85,0.25 -8.41,0.32 -9.95,-1.14 -0.71,-0.67 -1.04,-1.7 -1.04,-3.25 v -20.66 h 11.04 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0.01,-0.55 -0.44,-1 -0.99,-1 z"
+            id="path26"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 880.73,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 3.7 c -4.15,-4.03 -9.8,-6.15 -16.46,-6.15 -7.15,0 -13.87,2.9 -18.91,8.17 -5.08,5.31 -7.88,12.45 -7.88,20.1 0,7.65 2.8,14.79 7.88,20.11 5.04,5.27 11.76,8.17 18.91,8.17 6.66,0 12.31,-2.12 16.46,-6.15 v 3.7 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c -0.01,-0.55 -0.45,-1 -1,-1 z m -14.56,26.83 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.18,0 13.9,5.63 13.9,13.71 z"
+            id="path28"
+            style="fill:#000000" />
+           <path
+            class="st0"
+            d="m 637.94,102.65 h -14.4 c -0.49,0 -0.92,0.31 -1.08,0.77 l -11.13,33.32 -13.05,-33.37 c -0.17,-0.44 -0.59,-0.72 -1.06,-0.72 h -14.71 c -0.38,0 -0.74,0.19 -0.95,0.51 -0.21,0.32 -0.25,0.72 -0.1,1.07 l 21.83,50.99 c -2.51,6.69 -6.12,9.31 -12.78,9.31 -0.05,0 -0.1,0 -0.14,0 -0.3,0 -0.59,0.12 -0.8,0.33 -0.22,0.21 -0.33,0.5 -0.33,0.8 v 12.36 c 0,0.61 0.48,1.11 1.08,1.14 0.63,0.03 1.25,0.05 1.87,0.05 6.25,0 11.45,-1.62 15.85,-4.92 4.83,-3.63 8.57,-9.21 11.43,-17.07 L 639,104.17 c 0.13,-0.35 0.08,-0.74 -0.13,-1.04 -0.21,-0.3 -0.56,-0.48 -0.93,-0.48 z"
+            id="path30"
+            style="fill:#000000" />
+         </g>
+         <path
+            class="st0"
+            d="m 215.93,168.67 -9.88,-9.88 -3.3,3.3 5.03,5.03 h -22.43 c -0.93,-2.53 -2.93,-4.55 -5.45,-5.51 V 35.56 c 0,-2.16 -1.75,-3.91 -3.91,-3.91 h -27.18 c -1.8,0 -3.49,0.95 -4.42,2.49 L 108.64,90.65 72.71,34.12 C 71.77,32.59 70.09,31.65 68.3,31.65 H 49.2 C 48.24,29.13 46.23,27.13 43.7,26.2 V 0 h -6.4 v 26.2 c -2.56,0.94 -4.6,2.98 -5.54,5.54 H 8.83 l 5.03,-5.03 -3.3,-3.3 -9.88,9.88 C 0.24,33.73 0,34.32 0,34.94 c 0,0.62 0.25,1.21 0.68,1.65 l 9.88,9.88 3.3,-3.3 -5.03,-5.03 h 22.91 c 0.93,2.54 2.93,4.56 5.46,5.52 V 169.7 c 0,2.16 1.75,3.91 3.91,3.91 h 28.82 c 2.16,0 3.91,-1.75 3.91,-3.91 v -68.08 l 30.47,46.42 c 0.92,1.41 2.5,2.29 4.23,2.35 0.04,0 0.08,0 0.12,0 1.75,0 3.37,-0.89 4.34,-2.39 l 30.1,-46.99 0.35,67.38 c 0,2.87 2.32,5.21 5.18,5.21 h 19.26 c 0.96,2.52 2.97,4.52 5.51,5.45 v 26.19 h 6.4 v -26.19 c 2.56,-0.94 4.6,-2.98 5.54,-5.54 h 22.43 l -5.03,5.03 3.3,3.3 9.88,-9.88 c 0.92,-0.91 0.92,-2.38 0.01,-3.29 z M 40.49,39.6 c -0.16,0 -0.32,-0.01 -0.48,-0.02 -0.03,0 -0.06,-0.01 -0.09,-0.01 -0.13,-0.02 -0.25,-0.03 -0.37,-0.06 -0.02,0 -0.04,-0.01 -0.07,-0.02 -0.13,-0.03 -0.26,-0.06 -0.38,-0.1 -0.01,0 -0.03,-0.01 -0.04,-0.02 -0.13,-0.04 -0.26,-0.09 -0.39,-0.14 0,0 0,0 0,0 -0.14,-0.06 -0.27,-0.12 -0.4,-0.19 -0.4,-0.22 -0.76,-0.49 -1.07,-0.8 -0.03,-0.03 -0.05,-0.06 -0.08,-0.09 -0.2,-0.21 -0.38,-0.43 -0.53,-0.68 0,0 0,0 0,0 -0.08,-0.12 -0.15,-0.24 -0.22,-0.37 0,-0.01 -0.01,-0.02 -0.01,-0.03 -0.06,-0.12 -0.12,-0.24 -0.17,-0.36 -0.01,-0.02 -0.02,-0.05 -0.03,-0.07 -0.04,-0.11 -0.09,-0.22 -0.12,-0.34 -0.01,-0.04 -0.02,-0.09 -0.03,-0.14 -0.03,-0.1 -0.05,-0.2 -0.07,-0.3 -0.02,-0.08 -0.02,-0.15 -0.04,-0.23 -0.01,-0.07 -0.03,-0.15 -0.03,-0.22 -0.02,-0.15 -0.02,-0.31 -0.02,-0.46 0,0 0,0 0,0 0,-0.16 0.01,-0.31 0.02,-0.47 0.01,-0.08 0.02,-0.15 0.03,-0.22 0.01,-0.08 0.02,-0.15 0.03,-0.23 0.02,-0.1 0.05,-0.2 0.08,-0.3 0.01,-0.04 0.02,-0.09 0.03,-0.13 0.04,-0.12 0.08,-0.23 0.12,-0.35 0.01,-0.02 0.02,-0.04 0.02,-0.07 0.05,-0.13 0.11,-0.25 0.17,-0.37 0,-0.01 0.01,-0.02 0.01,-0.02 0.2,-0.39 0.46,-0.74 0.76,-1.05 0.05,-0.05 0.1,-0.1 0.15,-0.15 0.21,-0.2 0.44,-0.38 0.68,-0.54 0,0 0,0 0,0 0.12,-0.08 0.24,-0.15 0.37,-0.22 0.01,0 0.02,-0.01 0.02,-0.01 0.12,-0.06 0.24,-0.12 0.37,-0.17 0.02,-0.01 0.05,-0.02 0.07,-0.02 0.11,-0.04 0.23,-0.09 0.34,-0.12 0.04,-0.01 0.09,-0.02 0.13,-0.03 0.1,-0.03 0.2,-0.05 0.3,-0.07 0.08,-0.02 0.15,-0.02 0.23,-0.04 0.07,-0.01 0.14,-0.03 0.22,-0.03 0.15,-0.02 0.31,-0.02 0.47,-0.02 0.16,0 0.31,0.01 0.47,0.02 0.07,0.01 0.15,0.02 0.22,0.03 0.08,0.01 0.16,0.02 0.23,0.04 0.1,0.02 0.2,0.05 0.3,0.07 0.04,0.01 0.09,0.02 0.13,0.03 0.12,0.04 0.23,0.08 0.34,0.12 0.02,0.01 0.05,0.02 0.07,0.02 0.13,0.05 0.25,0.11 0.37,0.17 0.01,0 0.02,0.01 0.02,0.01 0.13,0.07 0.25,0.14 0.37,0.22 0,0 0,0 0,0 0.24,0.16 0.47,0.34 0.68,0.54 0.02,0.02 0.05,0.04 0.07,0.06 0.32,0.32 0.59,0.68 0.81,1.07 0,0 0,0 0,0 0.07,0.13 0.13,0.26 0.19,0.39 0,0.01 0.01,0.01 0.01,0.02 0.05,0.13 0.1,0.25 0.14,0.38 0,0.02 0.01,0.03 0.02,0.05 0.04,0.12 0.07,0.24 0.1,0.37 0.01,0.03 0.02,0.05 0.02,0.08 0.02,0.12 0.04,0.24 0.06,0.36 0,0.04 0.01,0.07 0.02,0.11 0.02,0.16 0.02,0.31 0.02,0.47 0,0 0,0 0,0 0.01,2.57 -2.07,4.65 -4.64,4.65 z m 109.13,50.25 c -0.01,-1.46 -0.97,-2.74 -2.37,-3.14 -1.4,-0.41 -2.9,0.16 -3.69,1.39 L 108.63,142.63 73.3,88.8 c -0.8,-1.22 -2.3,-1.76 -3.69,-1.35 -1.39,0.42 -2.35,1.7 -2.35,3.15 v 76.42 H 43.79 V 43.66 c 2.49,-0.95 4.48,-2.93 5.42,-5.43 h 18.3 l 38.35,60.33 c 0.6,0.95 1.65,1.53 2.78,1.53 0,0 0,0 0,0 1.13,0 2.18,-0.58 2.78,-1.53 l 38.16,-60.32 h 23.72 v 123.37 c -2.49,0.94 -4.47,2.93 -5.42,5.42 h -17.87 z m 30.18,83.83 v 0 c -0.21,0.2 -0.44,0.38 -0.68,0.54 0,0 0,0 0,0 -0.12,0.08 -0.24,0.15 -0.37,0.22 -0.01,0 -0.02,0.01 -0.03,0.01 -0.12,0.06 -0.24,0.12 -0.37,0.17 -0.02,0.01 -0.05,0.02 -0.07,0.02 -0.11,0.04 -0.23,0.09 -0.34,0.12 -0.04,0.01 -0.09,0.02 -0.13,0.03 -0.1,0.03 -0.2,0.05 -0.3,0.07 -0.07,0.01 -0.15,0.02 -0.23,0.03 -0.07,0.01 -0.15,0.03 -0.22,0.03 -0.15,0.02 -0.31,0.02 -0.47,0.02 -0.16,0 -0.31,-0.01 -0.47,-0.02 -0.07,-0.01 -0.15,-0.02 -0.22,-0.03 -0.08,-0.01 -0.15,-0.02 -0.23,-0.03 -0.1,-0.02 -0.2,-0.05 -0.3,-0.07 -0.04,-0.01 -0.09,-0.02 -0.13,-0.03 -0.12,-0.04 -0.23,-0.08 -0.34,-0.12 -0.02,-0.01 -0.05,-0.02 -0.07,-0.03 -0.12,-0.05 -0.25,-0.11 -0.36,-0.17 -0.01,0 -0.02,-0.01 -0.03,-0.01 -0.13,-0.07 -0.25,-0.14 -0.37,-0.22 0,0 0,0 0,0 -0.24,-0.16 -0.47,-0.34 -0.68,-0.54 -0.03,-0.02 -0.05,-0.05 -0.08,-0.07 -0.32,-0.32 -0.59,-0.68 -0.8,-1.07 0,0 0,0 0,0 -0.07,-0.13 -0.13,-0.26 -0.19,-0.4 0,0 0,-0.01 -0.01,-0.01 -0.05,-0.12 -0.1,-0.25 -0.14,-0.38 -0.01,-0.02 -0.01,-0.03 -0.02,-0.05 -0.04,-0.12 -0.07,-0.24 -0.09,-0.36 -0.01,-0.03 -0.02,-0.06 -0.02,-0.08 -0.02,-0.11 -0.04,-0.22 -0.05,-0.34 -0.01,-0.04 -0.01,-0.08 -0.02,-0.13 -0.02,-0.16 -0.02,-0.31 -0.02,-0.48 0,-2.56 2.09,-4.65 4.65,-4.65 0.16,0 0.32,0.01 0.48,0.02 0.04,0 0.08,0.01 0.13,0.02 0.11,0.01 0.22,0.03 0.33,0.05 0.03,0.01 0.06,0.02 0.09,0.02 0.12,0.03 0.24,0.06 0.36,0.09 0.02,0.01 0.04,0.02 0.06,0.02 0.12,0.04 0.25,0.08 0.37,0.14 0.01,0 0.02,0.01 0.03,0.01 0.13,0.06 0.25,0.12 0.38,0.18 0,0 0.01,0 0.01,0.01 0.39,0.21 0.75,0.48 1.06,0.8 0.02,0.03 0.05,0.05 0.07,0.08 v 0 c 0.2,0.21 0.38,0.44 0.54,0.68 0,0 0,0 0,0 0.08,0.12 0.15,0.24 0.22,0.37 0,0.01 0.01,0.02 0.01,0.03 0.06,0.12 0.12,0.24 0.17,0.37 0.01,0.02 0.02,0.05 0.03,0.07 0.04,0.11 0.09,0.23 0.12,0.34 0.01,0.04 0.02,0.09 0.03,0.13 0.03,0.1 0.05,0.2 0.07,0.3 0.01,0.07 0.02,0.15 0.03,0.23 0.01,0.07 0.03,0.15 0.03,0.22 0.02,0.15 0.02,0.31 0.02,0.47 0,0.16 -0.01,0.31 -0.02,0.47 -0.01,0.08 -0.02,0.15 -0.03,0.22 -0.01,0.08 -0.02,0.15 -0.03,0.23 -0.02,0.1 -0.05,0.2 -0.07,0.3 -0.01,0.04 -0.02,0.09 -0.03,0.13 -0.04,0.12 -0.08,0.23 -0.12,0.34 -0.01,0.02 -0.02,0.05 -0.03,0.07 -0.05,0.12 -0.11,0.25 -0.17,0.37 0,0.01 -0.01,0.02 -0.01,0.03 -0.07,0.13 -0.14,0.25 -0.22,0.37 0,0 0,0 0,0 -0.16,0.24 -0.34,0.47 -0.54,0.68 v 0 c -0.06,0.06 -0.11,0.12 -0.17,0.17 z"
+            id="path34"
+            style="fill:#000000" />
+         </svg> -->
+          <svg
+          class="only-light"
+          width="26%"
+          height="26%"
+          style="vertical-align:middle"
+          style="float:left"
+          version="1.1"
+          id="Calque_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 850.40002 205.24001"
+          xml:space="preserve"
+          sodipodi:docname="md-white.svg"
+          inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"><defs
+          id="defs39" /><sodipodi:namedview
+          id="namedview37"
+          pagecolor="#505050"
+          bordercolor="#ffffff"
+          borderopacity="1"
+          inkscape:pageshadow="0"
+          inkscape:pageopacity="0"
+          inkscape:pagecheckerboard="1"
+          showgrid="false"
+          inkscape:zoom="0.44880624"
+          inkscape:cx="355.38721"
+          inkscape:cy="387.69514"
+          inkscape:window-width="1277"
+          inkscape:window-height="847"
+          inkscape:window-x="0"
+          inkscape:window-y="25"
+          inkscape:window-maximized="0"
+          inkscape:current-layer="Calque_1"
+          fit-margin-top="0"
+          fit-margin-left="0"
+          fit-margin-right="0"
+          fit-margin-bottom="0" />
+       <style
+          type="text/css"
+          id="style2">
+         .st0{fill:#19132D;}
+       </style>
+       <g
+          id="g32"
+          style="fill:#ffffff"
+          transform="translate(-31.33,-15.87)">
+         <path
+          class="st0"
+          d="m 322.73,81.87 h -12.08 c -0.37,0 -0.7,0.19 -0.89,0.51 L 287.48,115.86 265.1,82.37 c -0.19,-0.31 -0.52,-0.51 -0.89,-0.51 h -12.08 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 13.42 c 0.55,0 1,-0.45 1,-1 v -43.7 c 0,-0.14 0.18,-0.19 0.25,-0.07 l 19.81,28.8 c 0.19,0.3 0.52,0.46 0.87,0.47 0.35,0 0.67,-0.18 0.87,-0.48 l 19.59,-29.19 c 0.07,-0.12 0.25,-0.07 0.25,0.07 l 0.22,44.05 c 0,0.58 0.47,1.05 1.04,1.05 h 13.28 c 0.55,0 1,-0.45 1,-1 V 82.86 c 0,-0.55 -0.45,-0.99 -1,-0.99 z"
+          id="path4"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 360.01,101.15 c -16.28,0 -29.03,12.42 -29.03,28.28 0,15.86 12.75,28.28 29.03,28.28 16.34,0 29.14,-12.42 29.14,-28.28 0,-15.86 -12.8,-28.28 -29.14,-28.28 z m 13.58,28.28 c 0,7.76 -5.71,13.4 -13.58,13.4 -7.81,0 -13.47,-5.64 -13.47,-13.4 0,-7.76 5.67,-13.4 13.47,-13.4 7.87,0 13.58,5.63 13.58,13.4 z"
+          id="path6"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 427.6,101.15 c -6.77,0 -12.25,2.05 -16.35,6.11 v -24.4 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 v -3.66 c 4.1,4.06 9.59,6.11 16.35,6.11 7.2,0 13.95,-2.9 19,-8.17 5.09,-5.31 7.9,-12.45 7.9,-20.11 0,-7.66 -2.8,-14.8 -7.9,-20.11 -5.06,-5.26 -11.81,-8.16 -19,-8.16 z m 11.34,28.28 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.18,0 13.9,5.63 13.9,13.71 z"
+          id="path8"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 469.41,80.31 c -4.83,0 -8.9,4.02 -8.9,8.79 0,4.71 4.08,8.69 8.9,8.69 4.96,0 9,-3.9 9,-8.69 0,-4.77 -4.12,-8.79 -9,-8.79 z"
+          id="path10"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 476.24,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 51.66 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z"
+          id="path12"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 504.74,78.76 h -13.56 c -0.55,0 -1,0.45 -1,1 v 75.5 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 v -75.5 c 0,-0.56 -0.45,-1 -1,-1 z"
+          id="path14"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 532.65,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 51.66 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z"
+          id="path16"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 525.82,80.31 c -4.83,0 -8.9,4.02 -8.9,8.79 0,4.71 4.08,8.69 8.9,8.69 4.96,0 9,-3.9 9,-8.69 0.01,-4.77 -4.12,-8.79 -9,-8.79 z"
+          id="path18"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="M 576.69,102.6 H 565.65 V 89.08 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 13.52 h -8.27 c -0.55,0 -1,0.45 -1,1 v 12.67 c 0,0.55 0.45,1 1,1 h 8.27 v 20.66 c 0,6.93 1.56,11.56 4.91,14.57 3.13,2.81 7.86,4.18 14.64,4.18 2.17,0 4.55,-0.14 7.15,-0.42 0.51,-0.05 0.89,-0.48 0.89,-0.99 v -11.95 c 0,-0.27 -0.11,-0.54 -0.31,-0.72 -0.2,-0.19 -0.47,-0.29 -0.74,-0.27 -4.86,0.25 -8.41,0.32 -9.95,-1.14 -0.71,-0.67 -1.04,-1.7 -1.04,-3.25 v -20.66 h 11.04 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0.01,-0.55 -0.44,-1 -0.99,-1 z"
+          id="path20"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="M 676.43,81.87 H 646.9 c -0.55,0 -1,0.45 -1,1 v 72.39 c 0,0.55 0.45,1 1,1 h 29.53 c 10.15,0 19.49,-3.82 26.31,-10.76 6.77,-6.89 10.5,-16.28 10.5,-26.44 0,-10.16 -3.73,-19.55 -10.5,-26.44 -6.82,-6.93 -16.16,-10.75 -26.31,-10.75 z m 20.93,37.19 c 0,12.77 -8.61,21.69 -20.93,21.69 H 662.42 V 97.37 h 14.01 c 12.32,0 20.93,8.92 20.93,21.69 z"
+          id="path22"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="M 775.16,102.6 H 761.6 c -0.55,0 -1,0.45 -1,1 v 3.7 c -4.15,-4.03 -9.8,-6.15 -16.46,-6.15 -7.15,0 -13.87,2.9 -18.91,8.17 -5.08,5.31 -7.88,12.45 -7.88,20.1 0,7.65 2.8,14.79 7.88,20.11 5.04,5.27 11.76,8.17 18.91,8.17 6.66,0 12.3,-2.12 16.46,-6.15 v 3.7 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0,-0.55 -0.45,-1 -1,-1 z m -14.56,26.83 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.19,0 13.9,5.63 13.9,13.71 z"
+          id="path24"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="M 818.36,102.6 H 807.32 V 89.08 c 0,-0.55 -0.45,-1 -1,-1 h -13.56 c -0.55,0 -1,0.45 -1,1 v 13.52 h -8.27 c -0.55,0 -1,0.45 -1,1 v 12.67 c 0,0.55 0.45,1 1,1 h 8.27 v 20.66 c 0,6.93 1.56,11.56 4.91,14.57 3.13,2.81 7.86,4.18 14.64,4.18 2.17,0 4.55,-0.14 7.15,-0.42 0.51,-0.05 0.89,-0.48 0.89,-0.99 v -11.95 c 0,-0.27 -0.11,-0.54 -0.31,-0.72 -0.2,-0.19 -0.47,-0.29 -0.74,-0.27 -4.85,0.25 -8.41,0.32 -9.95,-1.14 -0.71,-0.67 -1.04,-1.7 -1.04,-3.25 v -20.66 h 11.04 c 0.55,0 1,-0.45 1,-1 V 103.6 c 0.01,-0.55 -0.44,-1 -0.99,-1 z"
+          id="path26"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 880.73,102.6 h -13.56 c -0.55,0 -1,0.45 -1,1 v 3.7 c -4.15,-4.03 -9.8,-6.15 -16.46,-6.15 -7.15,0 -13.87,2.9 -18.91,8.17 -5.08,5.31 -7.88,12.45 -7.88,20.1 0,7.65 2.8,14.79 7.88,20.11 5.04,5.27 11.76,8.17 18.91,8.17 6.66,0 12.31,-2.12 16.46,-6.15 v 3.7 c 0,0.55 0.45,1 1,1 h 13.56 c 0.55,0 1,-0.45 1,-1 V 103.6 c -0.01,-0.55 -0.45,-1 -1,-1 z m -14.56,26.83 c 0,8.07 -5.72,13.71 -13.9,13.71 -8.12,0 -13.79,-5.64 -13.79,-13.71 0,-8.07 5.67,-13.71 13.79,-13.71 8.18,0 13.9,5.63 13.9,13.71 z"
+          id="path28"
+          style="fill:#ffffff" />
+         <path
+          class="st0"
+          d="m 637.94,102.65 h -14.4 c -0.49,0 -0.92,0.31 -1.08,0.77 l -11.13,33.32 -13.05,-33.37 c -0.17,-0.44 -0.59,-0.72 -1.06,-0.72 h -14.71 c -0.38,0 -0.74,0.19 -0.95,0.51 -0.21,0.32 -0.25,0.72 -0.1,1.07 l 21.83,50.99 c -2.51,6.69 -6.12,9.31 -12.78,9.31 -0.05,0 -0.1,0 -0.14,0 -0.3,0 -0.59,0.12 -0.8,0.33 -0.22,0.21 -0.33,0.5 -0.33,0.8 v 12.36 c 0,0.61 0.48,1.11 1.08,1.14 0.63,0.03 1.25,0.05 1.87,0.05 6.25,0 11.45,-1.62 15.85,-4.92 4.83,-3.63 8.57,-9.21 11.43,-17.07 L 639,104.17 c 0.13,-0.35 0.08,-0.74 -0.13,-1.04 -0.21,-0.3 -0.56,-0.48 -0.93,-0.48 z"
+          id="path30"
+          style="fill:#ffffff" />
+       </g>
+       <path
+          class="st0"
+          d="m 215.93,168.67 -9.88,-9.88 -3.3,3.3 5.03,5.03 h -22.43 c -0.93,-2.53 -2.93,-4.55 -5.45,-5.51 V 35.56 c 0,-2.16 -1.75,-3.91 -3.91,-3.91 h -27.18 c -1.8,0 -3.49,0.95 -4.42,2.49 L 108.64,90.65 72.71,34.12 C 71.77,32.59 70.09,31.65 68.3,31.65 H 49.2 C 48.24,29.13 46.23,27.13 43.7,26.2 V 0 h -6.4 v 26.2 c -2.56,0.94 -4.6,2.98 -5.54,5.54 H 8.83 l 5.03,-5.03 -3.3,-3.3 -9.88,9.88 C 0.24,33.73 0,34.32 0,34.94 c 0,0.62 0.25,1.21 0.68,1.65 l 9.88,9.88 3.3,-3.3 -5.03,-5.03 h 22.91 c 0.93,2.54 2.93,4.56 5.46,5.52 V 169.7 c 0,2.16 1.75,3.91 3.91,3.91 h 28.82 c 2.16,0 3.91,-1.75 3.91,-3.91 v -68.08 l 30.47,46.42 c 0.92,1.41 2.5,2.29 4.23,2.35 0.04,0 0.08,0 0.12,0 1.75,0 3.37,-0.89 4.34,-2.39 l 30.1,-46.99 0.35,67.38 c 0,2.87 2.32,5.21 5.18,5.21 h 19.26 c 0.96,2.52 2.97,4.52 5.51,5.45 v 26.19 h 6.4 v -26.19 c 2.56,-0.94 4.6,-2.98 5.54,-5.54 h 22.43 l -5.03,5.03 3.3,3.3 9.88,-9.88 c 0.92,-0.91 0.92,-2.38 0.01,-3.29 z M 40.49,39.6 c -0.16,0 -0.32,-0.01 -0.48,-0.02 -0.03,0 -0.06,-0.01 -0.09,-0.01 -0.13,-0.02 -0.25,-0.03 -0.37,-0.06 -0.02,0 -0.04,-0.01 -0.07,-0.02 -0.13,-0.03 -0.26,-0.06 -0.38,-0.1 -0.01,0 -0.03,-0.01 -0.04,-0.02 -0.13,-0.04 -0.26,-0.09 -0.39,-0.14 0,0 0,0 0,0 -0.14,-0.06 -0.27,-0.12 -0.4,-0.19 -0.4,-0.22 -0.76,-0.49 -1.07,-0.8 -0.03,-0.03 -0.05,-0.06 -0.08,-0.09 -0.2,-0.21 -0.38,-0.43 -0.53,-0.68 0,0 0,0 0,0 -0.08,-0.12 -0.15,-0.24 -0.22,-0.37 0,-0.01 -0.01,-0.02 -0.01,-0.03 -0.06,-0.12 -0.12,-0.24 -0.17,-0.36 -0.01,-0.02 -0.02,-0.05 -0.03,-0.07 -0.04,-0.11 -0.09,-0.22 -0.12,-0.34 -0.01,-0.04 -0.02,-0.09 -0.03,-0.14 -0.03,-0.1 -0.05,-0.2 -0.07,-0.3 -0.02,-0.08 -0.02,-0.15 -0.04,-0.23 -0.01,-0.07 -0.03,-0.15 -0.03,-0.22 -0.02,-0.15 -0.02,-0.31 -0.02,-0.46 0,0 0,0 0,0 0,-0.16 0.01,-0.31 0.02,-0.47 0.01,-0.08 0.02,-0.15 0.03,-0.22 0.01,-0.08 0.02,-0.15 0.03,-0.23 0.02,-0.1 0.05,-0.2 0.08,-0.3 0.01,-0.04 0.02,-0.09 0.03,-0.13 0.04,-0.12 0.08,-0.23 0.12,-0.35 0.01,-0.02 0.02,-0.04 0.02,-0.07 0.05,-0.13 0.11,-0.25 0.17,-0.37 0,-0.01 0.01,-0.02 0.01,-0.02 0.2,-0.39 0.46,-0.74 0.76,-1.05 0.05,-0.05 0.1,-0.1 0.15,-0.15 0.21,-0.2 0.44,-0.38 0.68,-0.54 0,0 0,0 0,0 0.12,-0.08 0.24,-0.15 0.37,-0.22 0.01,0 0.02,-0.01 0.02,-0.01 0.12,-0.06 0.24,-0.12 0.37,-0.17 0.02,-0.01 0.05,-0.02 0.07,-0.02 0.11,-0.04 0.23,-0.09 0.34,-0.12 0.04,-0.01 0.09,-0.02 0.13,-0.03 0.1,-0.03 0.2,-0.05 0.3,-0.07 0.08,-0.02 0.15,-0.02 0.23,-0.04 0.07,-0.01 0.14,-0.03 0.22,-0.03 0.15,-0.02 0.31,-0.02 0.47,-0.02 0.16,0 0.31,0.01 0.47,0.02 0.07,0.01 0.15,0.02 0.22,0.03 0.08,0.01 0.16,0.02 0.23,0.04 0.1,0.02 0.2,0.05 0.3,0.07 0.04,0.01 0.09,0.02 0.13,0.03 0.12,0.04 0.23,0.08 0.34,0.12 0.02,0.01 0.05,0.02 0.07,0.02 0.13,0.05 0.25,0.11 0.37,0.17 0.01,0 0.02,0.01 0.02,0.01 0.13,0.07 0.25,0.14 0.37,0.22 0,0 0,0 0,0 0.24,0.16 0.47,0.34 0.68,0.54 0.02,0.02 0.05,0.04 0.07,0.06 0.32,0.32 0.59,0.68 0.81,1.07 0,0 0,0 0,0 0.07,0.13 0.13,0.26 0.19,0.39 0,0.01 0.01,0.01 0.01,0.02 0.05,0.13 0.1,0.25 0.14,0.38 0,0.02 0.01,0.03 0.02,0.05 0.04,0.12 0.07,0.24 0.1,0.37 0.01,0.03 0.02,0.05 0.02,0.08 0.02,0.12 0.04,0.24 0.06,0.36 0,0.04 0.01,0.07 0.02,0.11 0.02,0.16 0.02,0.31 0.02,0.47 0,0 0,0 0,0 0.01,2.57 -2.07,4.65 -4.64,4.65 z m 109.13,50.25 c -0.01,-1.46 -0.97,-2.74 -2.37,-3.14 -1.4,-0.41 -2.9,0.16 -3.69,1.39 L 108.63,142.63 73.3,88.8 c -0.8,-1.22 -2.3,-1.76 -3.69,-1.35 -1.39,0.42 -2.35,1.7 -2.35,3.15 v 76.42 H 43.79 V 43.66 c 2.49,-0.95 4.48,-2.93 5.42,-5.43 h 18.3 l 38.35,60.33 c 0.6,0.95 1.65,1.53 2.78,1.53 0,0 0,0 0,0 1.13,0 2.18,-0.58 2.78,-1.53 l 38.16,-60.32 h 23.72 v 123.37 c -2.49,0.94 -4.47,2.93 -5.42,5.42 h -17.87 z m 30.18,83.83 v 0 c -0.21,0.2 -0.44,0.38 -0.68,0.54 0,0 0,0 0,0 -0.12,0.08 -0.24,0.15 -0.37,0.22 -0.01,0 -0.02,0.01 -0.03,0.01 -0.12,0.06 -0.24,0.12 -0.37,0.17 -0.02,0.01 -0.05,0.02 -0.07,0.02 -0.11,0.04 -0.23,0.09 -0.34,0.12 -0.04,0.01 -0.09,0.02 -0.13,0.03 -0.1,0.03 -0.2,0.05 -0.3,0.07 -0.07,0.01 -0.15,0.02 -0.23,0.03 -0.07,0.01 -0.15,0.03 -0.22,0.03 -0.15,0.02 -0.31,0.02 -0.47,0.02 -0.16,0 -0.31,-0.01 -0.47,-0.02 -0.07,-0.01 -0.15,-0.02 -0.22,-0.03 -0.08,-0.01 -0.15,-0.02 -0.23,-0.03 -0.1,-0.02 -0.2,-0.05 -0.3,-0.07 -0.04,-0.01 -0.09,-0.02 -0.13,-0.03 -0.12,-0.04 -0.23,-0.08 -0.34,-0.12 -0.02,-0.01 -0.05,-0.02 -0.07,-0.03 -0.12,-0.05 -0.25,-0.11 -0.36,-0.17 -0.01,0 -0.02,-0.01 -0.03,-0.01 -0.13,-0.07 -0.25,-0.14 -0.37,-0.22 0,0 0,0 0,0 -0.24,-0.16 -0.47,-0.34 -0.68,-0.54 -0.03,-0.02 -0.05,-0.05 -0.08,-0.07 -0.32,-0.32 -0.59,-0.68 -0.8,-1.07 0,0 0,0 0,0 -0.07,-0.13 -0.13,-0.26 -0.19,-0.4 0,0 0,-0.01 -0.01,-0.01 -0.05,-0.12 -0.1,-0.25 -0.14,-0.38 -0.01,-0.02 -0.01,-0.03 -0.02,-0.05 -0.04,-0.12 -0.07,-0.24 -0.09,-0.36 -0.01,-0.03 -0.02,-0.06 -0.02,-0.08 -0.02,-0.11 -0.04,-0.22 -0.05,-0.34 -0.01,-0.04 -0.01,-0.08 -0.02,-0.13 -0.02,-0.16 -0.02,-0.31 -0.02,-0.48 0,-2.56 2.09,-4.65 4.65,-4.65 0.16,0 0.32,0.01 0.48,0.02 0.04,0 0.08,0.01 0.13,0.02 0.11,0.01 0.22,0.03 0.33,0.05 0.03,0.01 0.06,0.02 0.09,0.02 0.12,0.03 0.24,0.06 0.36,0.09 0.02,0.01 0.04,0.02 0.06,0.02 0.12,0.04 0.25,0.08 0.37,0.14 0.01,0 0.02,0.01 0.03,0.01 0.13,0.06 0.25,0.12 0.38,0.18 0,0 0.01,0 0.01,0.01 0.39,0.21 0.75,0.48 1.06,0.8 0.02,0.03 0.05,0.05 0.07,0.08 v 0 c 0.2,0.21 0.38,0.44 0.54,0.68 0,0 0,0 0,0 0.08,0.12 0.15,0.24 0.22,0.37 0,0.01 0.01,0.02 0.01,0.03 0.06,0.12 0.12,0.24 0.17,0.37 0.01,0.02 0.02,0.05 0.03,0.07 0.04,0.11 0.09,0.23 0.12,0.34 0.01,0.04 0.02,0.09 0.03,0.13 0.03,0.1 0.05,0.2 0.07,0.3 0.01,0.07 0.02,0.15 0.03,0.23 0.01,0.07 0.03,0.15 0.03,0.22 0.02,0.15 0.02,0.31 0.02,0.47 0,0.16 -0.01,0.31 -0.02,0.47 -0.01,0.08 -0.02,0.15 -0.03,0.22 -0.01,0.08 -0.02,0.15 -0.03,0.23 -0.02,0.1 -0.05,0.2 -0.07,0.3 -0.01,0.04 -0.02,0.09 -0.03,0.13 -0.04,0.12 -0.08,0.23 -0.12,0.34 -0.01,0.02 -0.02,0.05 -0.03,0.07 -0.05,0.12 -0.11,0.25 -0.17,0.37 0,0.01 -0.01,0.02 -0.01,0.03 -0.07,0.13 -0.14,0.25 -0.22,0.37 0,0 0,0 0,0 -0.16,0.24 -0.34,0.47 -0.54,0.68 v 0 c -0.06,0.06 -0.11,0.12 -0.17,0.17 z"
+          id="path34"
+          style="fill:#ffffff" />
+       </svg>
+        </a>
+        
+      </div>
+      <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/MobilityData" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/mobilitydata" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://bit.ly/mobilitydata-slack" target="_blank" rel="noopener" title="bit.ly" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+    
+  </body>
+</html>
