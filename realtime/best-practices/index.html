@@ -833,11 +833,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practice-recommendations-organized-by-case" class="md-nav__link">
-    Practice Recommendations Organized by Case
+  <a href="#practice-recommendations-organized-by-use-case" class="md-nav__link">
+    Practice Recommendations Organized by Use Case
   </a>
   
-    <nav class="md-nav" aria-label="Practice Recommendations Organized by Case">
+    <nav class="md-nav" aria-label="Practice Recommendations Organized by Use Case">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1512,7 +1512,7 @@
 <p>Recommended practices are organized into two primary sections</p>
 <ul>
 <li><strong><a href="#practice-recommendations-organized-by-message">Practice Recommendations Organized by Message</a>:</strong> Recommendations are organized by message and field in the same order described in the official GTFS Realtime reference.</li>
-<li><strong><a href="#practice-recommendations-organized-by-case">Practice Recommendations Organized by Case</a>:</strong> With particular cases, such as frequency-based service (vs. schedule-based service), practices may need to be applied across several messages and fields as well as the corresponding GTFS schedule data. Such recommendations are consolidated in this section.</li>
+<li><strong><a href="#practice-recommendations-organized-by-use-case">Practice Recommendations Organized by Case</a>:</strong> With particular cases, such as frequency-based service (vs. schedule-based service), practices may need to be applied across several messages and fields as well as the corresponding GTFS schedule data. Such recommendations are consolidated in this section.</li>
 </ul>
 <h3 id="feed-publishing-general-practices">Feed Publishing &amp; General Practices<a class="headerlink" href="#feed-publishing-general-practices" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1543,6 +1543,10 @@
 <td>Current version is "2.0".  All GTFS Realtime feeds should be "2.0" or higher, as early version of GTFS Realtime did not require all fields needed to represent various transit situations adequately.</td>
 </tr>
 <tr>
+<td>incrementality</td>
+<td></td>
+</tr>
+<tr>
 <td>timestamp</td>
 <td>This timestamp should not decrease between two sequential feed iterations.</td>
 </tr>
@@ -1566,6 +1570,22 @@
 <td>id</td>
 <td>Should be kept stable over the entire trip duration</td>
 </tr>
+<tr>
+<td>is_deleted</td>
+<td></td>
+</tr>
+<tr>
+<td>trip_update</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle</td>
+<td></td>
+</tr>
+<tr>
+<td>alert</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="tripupdate">TripUpdate<a class="headerlink" href="#tripupdate" title="Permanent link">&para;</a></h3>
@@ -1582,19 +1602,19 @@
 <tbody>
 <tr>
 <td>trip</td>
-<td>refer to <a href="#tripdescriptor">message TripDescriptor</a></td>
+<td>refer to <a href="#TripDescriptor">message TripDescriptor</a></td>
 </tr>
 <tr>
 <td></td>
-<td>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#tripdescriptor">TripDescriptor</a> and <a href="#vehicledescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>. If any <code>TripUpdate</code> entity has <code>trip_id:4</code> and any <code>vehicle_id</code> other than 4, this is an error.</td>
+<td>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#TripDescriptor">TripDescriptor</a> and <a href="#VehicleDescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>. If any <code>TripUpdate</code> entity has <code>trip_id:4</code> and any <code>vehicle_id</code> other than 4, this is an error.</td>
 </tr>
 <tr>
 <td>vehicle</td>
-<td>refer to <a href="#vehicledescriptor">message VehicleDescriptor</a></td>
+<td>refer to <a href="#VehicleDescriptor">message VehicleDescriptor</a></td>
 </tr>
 <tr>
 <td></td>
-<td>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#tripdescriptor">TripDescriptor</a> and <a href="#vehicledescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br/>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>. If any <code>TripUpdate</code> entity has <code>trip_id:4</code> and any <code>vehicle_id</code> other than 4, this is an error.</td>
+<td>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#TripDescriptor">TripDescriptor</a> and <a href="#VehicleDescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br/>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>. If any <code>TripUpdate</code> entity has <code>trip_id:4</code> and any <code>vehicle_id</code> other than 4, this is an error.</td>
 </tr>
 <tr>
 <td>stop_time_update</td>
@@ -1615,7 +1635,7 @@
 </tbody>
 </table>
 <h3 id="tripdescriptor">TripDescriptor<a class="headerlink" href="#tripdescriptor" title="Permanent link">&para;</a></h3>
-<p>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#tripdescriptor">TripDescriptor</a> and <a href="#vehicledescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.</p>
+<p>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#TripDescriptor">TripDescriptor</a> and <a href="#VehicleDescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.</p>
 <p>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>.</p>
 <table>
 <thead>
@@ -1626,13 +1646,33 @@
 </thead>
 <tbody>
 <tr>
+<td>trip_id</td>
+<td></td>
+</tr>
+<tr>
+<td>route_id</td>
+<td></td>
+</tr>
+<tr>
+<td>direction_id</td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+</tr>
+<tr>
 <td>schedule_relationship</td>
 <td>The behavior of <code>ADDED</code> trips are unspecified and the use of this enumeration is not recommended.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="vehicledescriptor">VehicleDescriptor<a class="headerlink" href="#vehicledescriptor" title="Permanent link">&para;</a></h3>
-<p>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#tripdescriptor">TripDescriptor</a> and <a href="#vehicledescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br/>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>.</p>
+<p>If separate <code>VehiclePosition</code> and <code>TripUpdate</code> feeds are provided, <a href="#TripDescriptor">TripDescriptor</a> and <a href="#VehicleDescriptor">VehicleDescriptor</a> ID values pairing should match between the two feeds.<br/>For example, a <code>VehiclePosition</code> entity has <code>vehicle_id:A</code> and <code>trip_id:4</code>, then the corresponding <code>TripUpdate</code> entity should also have <code>vehicle_id:A</code> and <code>trip_id:4</code>.</p>
 <table>
 <thead>
 <tr>
@@ -1644,6 +1684,14 @@
 <tr>
 <td>id</td>
 <td>Should uniquely and stably identify a vehicle over the entire trip duration</td>
+</tr>
+<tr>
+<td>label</td>
+<td></td>
+</tr>
+<tr>
+<td>license_plate</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1661,12 +1709,16 @@
 <td>Provide <code>stop_sequence</code> whenever possible, as it unambiguously resolves to a GTFS stop time in <code>stop_times.txt</code> unlike <code>stop_id</code>, which can occur more than once in a trip (e.g., loop route).</td>
 </tr>
 <tr>
+<td>stop_id</td>
+<td></td>
+</tr>
+<tr>
 <td>arrival</td>
 <td>Arrival times between sequential stops should increase - they should not be the same or decrease.</td>
 </tr>
 <tr>
 <td></td>
-<td>Arrival <code>time</code> (specified in <a href="#stoptimeevent">StopTimeEvent</a>) should be before the departure <code>time</code> for the same stop if a layover or dwell time is expected - otherwise, arrival <code>time</code> should be be the same as departure <code>time</code>.</td>
+<td>Arrival <code>time</code> (specified in <a href="#StopTimeEvent">StopTimeEvent</a>) should be before the departure <code>time</code> for the same stop if a layover or dwell time is expected - otherwise, arrival <code>time</code> should be be the same as departure <code>time</code>.</td>
 </tr>
 <tr>
 <td>departure</td>
@@ -1674,7 +1726,7 @@
 </tr>
 <tr>
 <td></td>
-<td>Departure <code>time</code> (specified in <a href="#stoptimeevent">StopTimeEvent</a>) should be the same as the arrival <code>time</code> for the same stop if no layover or dwell time is expected - otherwise, departure <code>time</code> should be after arrival <code>time</code> .</td>
+<td>Departure <code>time</code> (specified in <a href="#StopTimeEvent">StopTimeEvent</a>) should be the same as the arrival <code>time</code> for the same stop if no layover or dwell time is expected - otherwise, departure <code>time</code> should be after arrival <code>time</code> .</td>
 </tr>
 <tr>
 <td>schedule_relationship</td>
@@ -1693,7 +1745,15 @@
 <tbody>
 <tr>
 <td>delay</td>
-<td>If only <code>delay</code> is provided in a <code>stop_time_update</code> <code>arrival</code> or <code>departure</code> (and not <code>time</code>), then the GTFS <a href="../../schedule/reference/#stopstxt">stop_times.txt</a> should contain arrival_times and/or departure_times for these corresponding stops. A <code>delay</code> value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS <code>stop_times.txt</code> file.</td>
+<td>If only <code>delay</code> is provided in a <code>stop_time_update</code> <code>arrival</code> or <code>departure</code> (and not <code>time</code>), then the GTFS <a href="https://gtfs.org/reference/static#stopstxt">stop_times.txt</a> should contain arrival_times and/or departure_times for these corresponding stops. A <code>delay</code> value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS <code>stop_times.txt</code> file.</td>
+</tr>
+<tr>
+<td>time</td>
+<td></td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1712,8 +1772,48 @@
 <td>Should be kept stable over the entire trip duration</td>
 </tr>
 <tr>
+<td>vehicle (VehiclePosition)</td>
+<td></td>
+</tr>
+<tr>
 <td>vehicle.timestamp</td>
 <td>Providing the timestamp at which vehicle position was measured is strongly recommended. Otherwise, consumers must use the message timestamp, which can have misleading results for riders when the last message was updated more frequently than the individual position.</td>
+</tr>
+<tr>
+<td>vehicle.trip</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.trip.trip_id</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.trip.start_time</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.trip.start_date</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.trip.schedule_relationship</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.position</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.position.latitude</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.position.longitude</td>
+<td></td>
+</tr>
+<tr>
+<td>vehicle.vehicle (VehicleDescriptor)</td>
+<td></td>
 </tr>
 <tr>
 <td>vehicle.vehicle.id</td>
@@ -1723,6 +1823,36 @@
 </table>
 <h3 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h3>
 <p>The vehicle position should be within 200 meters of the GTFS shapes.txt data for the current trip unless there is an alert with the effect of <code>DETOUR</code> for this <code>trip_id</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latitude</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td></td>
+</tr>
+<tr>
+<td>bearing</td>
+<td></td>
+</tr>
+<tr>
+<td>odometer</td>
+<td></td>
+</tr>
+<tr>
+<td>speed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="alert">Alert<a class="headerlink" href="#alert" title="Permanent link">&para;</a></h3>
 <p>General guidelines for alerts:
 * When <code>trip_id</code> and <code>start_time</code> are within <code>exact_time=1</code> interval, <code>start_time</code> should be later than the beginning of the interval by an exact multiple of <code>headway_secs</code>. 
@@ -1738,20 +1868,56 @@
 </thead>
 <tbody>
 <tr>
+<td>active_period</td>
+<td></td>
+</tr>
+<tr>
+<td>informed_entity</td>
+<td></td>
+</tr>
+<tr>
+<td>cause</td>
+<td></td>
+</tr>
+<tr>
+<td>effect</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td></td>
+</tr>
+<tr>
+<td>header_text</td>
+<td></td>
+</tr>
+<tr>
 <td>description_text</td>
 <td>Use line breaks to make your service alert easier to read.</td>
 </tr>
+<tr>
+<td>tts_header_text</td>
+<td></td>
+</tr>
+<tr>
+<td>tts_description_text</td>
+<td></td>
+</tr>
+<tr>
+<td>severity_level</td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h2 id="practice-recommendations-organized-by-case">Practice Recommendations Organized by Case<a class="headerlink" href="#practice-recommendations-organized-by-case" title="Permanent link">&para;</a></h2>
+<h2 id="practice-recommendations-organized-by-use-case">Practice Recommendations Organized by Use Case<a class="headerlink" href="#practice-recommendations-organized-by-use-case" title="Permanent link">&para;</a></h2>
 <h3 id="frequency-based-trips">Frequency-based trips<a class="headerlink" href="#frequency-based-trips" title="Permanent link">&para;</a></h3>
-<p>A frequency-based trip does not follow a fixed schedule but attempts to maintain predetermined headways. These trips are denoted in <a href="../../schedule/reference/#frequenciestxt">GTFS frequency.txt</a> by setting <code>exact_times=0</code> or omitting the <code>exact_times</code> field (note that <code>exact_times=1</code> trips are <em>NOT</em> frequency-based trips - <code>frequencies.txt</code> with <code>exact_times=1</code> is simply used as a convenience method for storing schedule-based trips in a more compact manner). There are several best practices to keep in mind when constructing GTFS Realtime feeds for frequency-based trips.</p>
+<p>A frequency-based trip does not follow a fixed schedule but attempts to maintain predetermined headways. These trips are denoted in <a href="https://gtfs.org/reference/static/#frequenciestxt">GTFS frequency.txt</a> by setting <code>exact_times=0</code> or omitting the <code>exact_times</code> field (note that <code>exact_times=1</code> trips are <em>NOT</em> frequency-based trips - <code>frequencies.txt</code> with <code>exact_times=1</code> is simply used as a convenience method for storing schedule-based trips in a more compact manner). There are several best practices to keep in mind when constructing GTFS Realtime feeds for frequency-based trips.</p>
 <ul>
 <li>
-<p>In <a href="#stoptimeupdate">TripUpdate.StopTimeUpdate</a>, the <a href="#stoptimeevent">StopTimeEvent</a> for <code>arrival</code> and <code>departure</code> should not contain <code>delay</code> because frequency-based trips do not follow a fixed schedule. Instead, <code>time</code> should be provided to indicate arrival/departure predictions.</p>
+<p>In <a href="#StopTimeUpdate">TripUpdate.StopTimeUpdate</a>, the <a href="#StopTimeEvent">StopTimeEvent</a> for <code>arrival</code> and <code>departure</code> should not contain <code>delay</code> because frequency-based trips do not follow a fixed schedule. Instead, <code>time</code> should be provided to indicate arrival/departure predictions.</p>
 </li>
 <li>
-<p>As required by the spec, when describing <code>trip</code> in <a href="#tripupdate">TripUpdate</a> or <a href="#vehicleposition">VehiclePosition</a> by using <a href="#tripdescriptor">TripDescriptor</a>, all of <code>trip_id</code>, <code>start_time</code>, and <code>start_date</code> must be provided. Additionally, <code>schedule_relationship</code> should be <code>UNSCHEDULED</code>.
+<p>As required by the spec, when describing <code>trip</code> in <a href="#TripUpdate">TripUpdate</a> or <a href="#VehiclePosition">VehiclePosition</a> by using <a href="#TripDescriptor">TripDescriptor</a>, all of <code>trip_id</code>, <code>start_time</code>, and <code>start_date</code> must be provided. Additionally, <code>schedule_relationship</code> should be <code>UNSCHEDULED</code>.
  (e.g., re-enforcement trips).</p>
 </li>
 </ul>
