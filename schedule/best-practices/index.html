@@ -1611,7 +1611,7 @@
 
 
 <h1 id="gtfs-schedule-best-practices">GTFS Schedule Best Practices<a class="headerlink" href="#gtfs-schedule-best-practices" title="Permanent link">&para;</a></h1>
-<p>These are recommended practices for describing public transportation services in the <a href="../reference">General Transit Feed Specification (GTFS)</a>. These practices have been synthesized from the experience of the <a href="#gtfs-best-practices-working-group">GTFS Best Practices working group</a> members and <a href="http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS">application-specific GTFS practice recommendations</a>. </p>
+<p>These are recommended practices for describing public transportation services in the <a href="../reference">General Transit Feed Specification (GTFS)</a>. These practices have been synthesized from the experience of the <a href="#gtfs-best-practices-working-group">GTFS Best Practices working group</a> members and <a href="https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS">application-specific GTFS practice recommendations</a>. </p>
 <p>For further background, see the <a href="#frequently-asked-questions-faq">Frequently Asked Questions</a>.</p>
 <h2 id="document-structure">Document Structure<a class="headerlink" href="#document-structure" title="Permanent link">&para;</a></h2>
 <p>Practices are organized into four primary sections:</p>
@@ -1761,7 +1761,7 @@
 </tr>
 <tr>
 <td><code>route_long_name</code></td>
-<td>The definition from Specification reference: <q>This name is generally more descriptive than the <code>route_short_name</code> and will often include the route's destination or stop. At least one of <code>route_short_name</code> or <code>route_long_name</code> must be specified, or potentially both if appropriate. If the route does not have a long name, please specify a <code>route_short_name</code> and use an empty string as the value for this field.</q><br>Examples of types of long names are below:<table class='example'><thead><tr><th colspan='3'>Primary Travel Path or Corridor</th></tr><tr><th>Route Name</th><th>Form</th><th>Agency</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.sfmta.com/'>Muni</a>, in San Francisco</td></tr><tr><td><a href='https://trimet.org/schedules/r006.htm'>“6“/“ML King Jr Blvd“</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>, in Portland, Or.</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='http://www.ratp.fr/'>RATP</a>, in Paris France.</td></tr><tr><td><a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name</code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>, in Berlin, Germany</td></tr></tbody></table><table class='example'><thead><tr><th>Description of the Service</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“Hartwell Area Shuttle“</a></td></tr></tbody></table></td>
+<td>The definition from Specification reference: <q>This name is generally more descriptive than the <code>route_short_name</code> and will often include the route's destination or stop. At least one of <code>route_short_name</code> or <code>route_long_name</code> must be specified, or potentially both if appropriate. If the route does not have a long name, please specify a <code>route_short_name</code> and use an empty string as the value for this field.</q><br>Examples of types of long names are below:<table class='example'><thead><tr><th colspan='3'>Primary Travel Path or Corridor</th></tr><tr><th>Route Name</th><th>Form</th><th>Agency</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.sfmta.com/'>Muni</a>, in San Francisco</td></tr><tr><td><a href='https://trimet.org/schedules/r006.htm'>“6“/“ML King Jr Blvd“</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>, in Portland, Or.</td></tr><tr><td><a href='https://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.ratp.fr/'>RATP</a>, in Paris France.</td></tr><tr><td><a href='https://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name</code>-<br><code>route_long_name</code></td><td><a href='https://www.bvg.de/'>BVG</a>, in Berlin, Germany</td></tr></tbody></table><table class='example'><thead><tr><th>Description of the Service</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“Hartwell Area Shuttle“</a></td></tr></tbody></table></td>
 </tr>
 <tr>
 <td></td>
@@ -2221,10 +2221,10 @@
 <td>Subway Routes (<a href="https://www.transitchicago.com/assets/1/6/ctamap_Lsystem.pdf">Chicago</a>)</td>
 </tr>
 <tr>
-<td>Bus Suburb to Downtown Routes (<a href="https://stalbert.ca/uploads/PDF-infosheets/RideGuide-201-207_Revised_Oct_2017.pdf">St. Albert</a> or <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">Edmonton</a>)</td>
+<td>Bus Suburb to Downtown Routes (<a href="https://stalbert.ca/uploads/PDF-infosheets/RideGuide-201-207_Revised_Oct_2017.pdf">St. Albert</a> or <a href="https://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">Edmonton</a>)</td>
 </tr>
 <tr>
-<td>CTA Brown Line (<a href="http://www.transitchicago.com/brownline/">CTA Website</a> and <a href="https://transitfeeds.com/p/chicago-transit-authority/165/latest/route/Brn">TransitFeeds</a>)</td>
+<td>CTA Brown Line (<a href="https://www.transitchicago.com/brownline/">CTA Website</a> and <a href="https://transitfeeds.com/p/chicago-transit-authority/165/latest/route/Brn">TransitFeeds</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -2242,7 +2242,7 @@
 </tr>
 <tr>
 <td><code>stop_times.stop_headsign</code></td>
-<td>The stops along the A-B section will be passed through in both directions. <code>stop_headsign</code> facilitates distinguishing travel direction. Therefore, providing <code>stop_headsign</code> is recommended for these trips.example_table: <table class="example"><thead>  <tr><th>Examples:</th></tr></thead><tbody><tr><td>"A via B"</td></tr><tr><td>"A"</td></tr></tbody></table><table class="example"><thead><tr><th>Chicago Transit Authority's <a href="http://www.transitchicago.com/purpleline/">Purple Line</a></th></tr></thead><tbody><tr><td>"Southbound to Loop"</td></tr><tr><td>"Northbound via Loop"</td></tr><tr><td>"Northbound to Linden"</td></tr></tbody></table><table class="example"><thead><tr><th>Edmonton Transit Service Bus Lines, here <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">the 39</a></th></tr></thead><tbody><tr><td>"Rutherford"</td></tr><tr><td>"Century Park"</td></tr></tbody></table></td>
+<td>The stops along the A-B section will be passed through in both directions. <code>stop_headsign</code> facilitates distinguishing travel direction. Therefore, providing <code>stop_headsign</code> is recommended for these trips.example_table: <table class="example"><thead>  <tr><th>Examples:</th></tr></thead><tbody><tr><td>"A via B"</td></tr><tr><td>"A"</td></tr></tbody></table><table class="example"><thead><tr><th>Chicago Transit Authority's <a href="https://www.transitchicago.com/purpleline/">Purple Line</a></th></tr></thead><tbody><tr><td>"Southbound to Loop"</td></tr><tr><td>"Northbound via Loop"</td></tr><tr><td>"Northbound to Linden"</td></tr></tbody></table><table class="example"><thead><tr><th>Edmonton Transit Service Bus Lines, here <a href="https://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">the 39</a></th></tr></thead><tbody><tr><td>"Rutherford"</td></tr><tr><td>"Century Park"</td></tr></tbody></table></td>
 </tr>
 <tr>
 <td><code>trip.trip_headsign</code></td>
@@ -2285,7 +2285,7 @@
 </ul>
 <p>Without coordinated GTFS Best Practices, various GTFS-consuming applications may establish requirements and expectations in an uncoordinated way, which leads to diverging requirements and application-specific datasets and less interoperability. Prior to the release of the Best Practices, there was greater ambiguity and disagreement in what constitutes correctly-formed GTFS data.</p>
 <h3 id="how-were-they-developed-who-developed-them">How were they developed? Who developed them?<a class="headerlink" href="#how-were-they-developed-who-developed-them" title="Permanent link">&para;</a></h3>
-<p>These Best Practices were developed by a working group of 17 organizations involved in GTFS, including app providers &amp; data consumers, transit providers, and consultants with extensive involvement in GTFS. The working group was convened and facilitated by <a href="http://www.rmi.org/mobility">Rocky Mountain Institute</a>.</p>
+<p>These Best Practices were developed by a working group of 17 organizations involved in GTFS, including app providers &amp; data consumers, transit providers, and consultants with extensive involvement in GTFS. The working group was convened and facilitated by <a href="https://www.rmi.org/mobility">Rocky Mountain Institute</a>.</p>
 <p>Working Group members voted on each Best Practice. Most Best Practices were approved by a unanimous vote. In a minority of cases, Best Practices were approved a large majority of organizations.</p>
 <h3 id="why-not-just-change-the-gtfs-reference">Why not just change the GTFS reference?<a class="headerlink" href="#why-not-just-change-the-gtfs-reference" title="Permanent link">&para;</a></h3>
 <p>Good question! The process of examining the Specification, data usage and needs did indeed trigger some changes to the Specification (see <a href="https://github.com/google/transit/pulls?q=is%3Apr+is%3Aclosed">closed pull requests in GitHub</a>). Specification reference amendments are subject to a higher bar of scrutiny and comment than the Best Practices. However, there was still need to agree on a clear set of Best Practice recommendations.</p>
@@ -2315,26 +2315,26 @@
 <p>Please link here in order to provide feed producers with guidance for correct formation of GTFS data. Each individual recommendation has an anchor link. Click the recommendation to get the URL for the in-page anchor link.</p>
 <p>If a GTFS-consuming application makes requirements or recommendations for GTFS data practices that are not described here, it is recommended to publish a document with those requirements or recommendations to supplement these common best practices.</p>
 <h3 id="gtfs-best-practices-working-group">GTFS Best Practices Working Group<a class="headerlink" href="#gtfs-best-practices-working-group" title="Permanent link">&para;</a></h3>
-<p>The GTFS Best Practices Working Group was convened by <a href="http://rmi.org/">Rocky Mountain Institute</a> in 2016-17, consisting of public transportation providers, developers of GTFS-consuming applications, consultants, and academic organizations to define common practices and expectations for GTFS data. 
+<p>The GTFS Best Practices Working Group was convened by <a href="https://rmi.org/">Rocky Mountain Institute</a> in 2016-17, consisting of public transportation providers, developers of GTFS-consuming applications, consultants, and academic organizations to define common practices and expectations for GTFS data. 
 Members of this working group included:</p>
 <ul>
 <li><a href="https://www.camsys.com/">Cambridge Systematics</a></li>
 <li><a href="https://www.capmetro.org/">Capital Metro</a></li>
 <li><a href="https://www.cutr.usf.edu/">Center for Urban Transportation Research at University of South Florida</a></li>
-<li><a href="http://conveyal.com/">Conveyal</a></li>
+<li><a href="https://conveyal.com/">Conveyal</a></li>
 <li><a href="https://www.google.com/">Google</a></li>
-<li><a href="http://www.ibigroup.com/">IBI Group</a></li>
+<li><a href="https://www.ibigroup.com/">IBI Group</a></li>
 <li><a href="https://mapzen.com/">Mapzen</a></li>
 <li><a href="https://www.microsoft.com/">Microsoft</a></li>
 <li><a href="https://www.moovel.com/">Moovel</a></li>
-<li><a href="http://www.oregon.gov/odot/">Oregon Department of Transportation</a></li>
+<li><a href="https://www.oregon.gov/odot/">Oregon Department of Transportation</a></li>
 <li><a href="https://goswift.ly/">Swiftly</a></li>
 <li><a href="https://transitapp.com/">Transit</a></li>
-<li><a href="http://trilliumtransit.com/">Trillium</a></li>
+<li><a href="https://trilliumtransit.com/">Trillium</a></li>
 <li><a href="https://trimet.org/">TriMet</a></li>
-<li><a href="http://www.worldbank.org/">World Bank</a></li>
+<li><a href="https://www.worldbank.org/">World Bank</a></li>
 </ul>
-<p>Today, this document is maintained by <a href="http://mobilitydata.org/">MobilityData</a>.</p>
+<p>Today, this document is maintained by <a href="https://mobilitydata.org/">MobilityData</a>.</p>
 
               
             </article>

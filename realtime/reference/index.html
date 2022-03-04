@@ -1765,7 +1765,7 @@
 <p>Determines whether the current fetch is incremental.</p>
 <ul>
 <li><strong>FULL_DATASET</strong>: this feed update will overwrite all preceding realtime information for the feed. Thus this update is expected to provide a full snapshot of all known realtime information.</li>
-<li><strong>DIFFERENTIAL</strong>: currently, this mode is <strong>unsupported</strong> and behavior is <strong>unspecified</strong> for feeds that use this mode. There are discussions on the <a href="http://groups.google.com/group/gtfs-realtime">GTFS Realtime mailing list</a> around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.</li>
+<li><strong>DIFFERENTIAL</strong>: currently, this mode is <strong>unsupported</strong> and behavior is <strong>unspecified</strong> for feeds that use this mode. There are discussions on the <a href="https://groups.google.com/group/gtfs-realtime">GTFS Realtime mailing list</a> around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.</li>
 </ul>
 <p><strong>Values</strong></p>
 <table>
@@ -2954,7 +2954,7 @@ The update is linked to a specific stop either through stop_sequence or stop_id,
 <td><a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">string</a></td>
 <td>Required</td>
 <td>One</td>
-<td>String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.</td>
+<td>String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.</td>
 </tr>
 <tr>
 <td><strong>media_type</strong></td>
