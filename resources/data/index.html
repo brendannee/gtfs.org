@@ -1160,6 +1160,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sample-gtfs-and-gtfs-realtime-datasets-used-for-software-testing" class="md-nav__link">
+    Sample GTFS and GTFS Realtime datasets used for software testing
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1380,9 +1387,10 @@
 <p>Places to access collections of GTFS and other transit and multimodal data</p>
 <h2 id="3rd-party-gtfs-url-directories">3rd party GTFS URL directories<a class="headerlink" href="#3rd-party-gtfs-url-directories" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://transit.land/">Transitland</a> - Community editable list of many transit agency GTFS datasets. Also provides an API to access the data as JSON/GeoJSON and a playground to try out the data.</li>
-<li><a href="https://openmobilitydata.org/">OpenMobilityData</a> - List of GTFS and <a href="https://openmobilitydata.org/search?q=gtfsrt">GTFS-RT</a> feeds. <a href="https://openmobilitydata.org/p/capital-metro/24">Archives and validates</a> the GTFS feeds and allows you to preview both <a href="https://openmobilitydata.org/p/capital-metro/24/latest">GTFS</a> and <a href="https://openmobilitydata.org/p/capital-metro/495">GTFS-RT</a> through the browser.</li>
 <li><a href="https://www.gtfs-data-exchange.com/agencies">~~GTFS Data Exchange~~ (Deprecated)</a> - Formerly the definitive directory of GTFS feed URLs. Shutdown in 2016. But 93 GB of data from 2008 to 2016 is available upon request.</li>
+<li><a href="https://openmobilitydata.org/">~~OpenMobilityData~~ (Deprecated)</a> - List of GTFS and <a href="https://openmobilitydata.org/search?q=gtfsrt">GTFS-RT</a> feeds. <a href="https://openmobilitydata.org/p/capital-metro/24">Archives and validates</a> the GTFS feeds and allows you to preview both <a href="https://openmobilitydata.org/p/capital-metro/24/latest">GTFS</a> and <a href="https://openmobilitydata.org/p/capital-metro/495">GTFS-RT</a> through the browser. Formerly TransitFeeds.com. <a href="https://database.mobilitydata.org/#h.u71vp6xgkckf">MobilityData announced</a> it is end-of-life as of early 2022 with a shutdown date to be determined.</li>
+<li><a href="https://database.mobilitydata.org/">The Mobility Database</a> - JSON and CSV files <a href="https://github.com/MobilityData/mobility-database-catalogs">on GitHub</a> that is a repository of 1300+ mobility datasets across the world. Contains contents of OpenMobilityData/TransitFeeds.com.</li>
+<li><a href="https://transit.land/">Transitland</a> - Community editable list of many transit agency GTFS datasets. Also provides an API to access the data as JSON/GeoJSON and a playground to try out the data.</li>
 </ul>
 <h2 id="transit-agency-data-archives">Transit agency data archives<a class="headerlink" href="#transit-agency-data-archives" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1409,6 +1417,20 @@
 <li><a href="https://www.citylines.co">Citylines.co</a> - A collaborative platform for mapping transit systems, with an emphasis on their historical evolution. The data can be downloaded as GeoJSON or CSV from <a href="https://www.citylines.co/data">citylines.co/data</a>.</li>
 <li><a href="https://www.openstreetmap.org">OpenStreetMap (OSM)</a> - The collaborative platform for mapping the world, including transport, transit, and routing data.</li>
 <li><a href="https://github.com/mfdz/gtfs-hub">GTFS-Hub</a> - Community tested, probably quality/content enhanced, partially merged or filtered GTFS-feeds of (currently German) transport agencies. Maintained by <a href="https://github.com/mfdz">MITFAHR|DE|ZENTRALE</a>.</li>
+</ul>
+<h2 id="sample-gtfs-and-gtfs-realtime-datasets-used-for-software-testing">Sample GTFS and GTFS Realtime datasets used for software testing<a class="headerlink" href="#sample-gtfs-and-gtfs-realtime-datasets-used-for-software-testing" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/public-transport/sample-gtfs-feed">sample-gtfs-feed</a> - An imaginary GTFS data set used for testing.</li>
+<li><a href="https://github.com/google/transitfeed/tree/master/tests/data">transitfeed unit tests</a> - Test data created for the original Google <a href="https://github.com/google/transitfeed/wiki/FeedValidator">Python GTFS validator</a>.</li>
+<li><a href="https://github.com/interline-io/transitland-lib">Transitland GTFS and GTFS Realtime unit tests</a> - For testing the <a href="https://github.com/interline-io/transitland-lib">transitland-lib</a> library that handles GTFS and GTFS Realtime parsing and validation for Transitland:<ul>
+<li><a href="https://github.com/interline-io/transitland-lib/tree/master/test/data/bad-entities">GTFS - "bad entities" at the single row level</a></li>
+<li><a href="https://github.com/interline-io/transitland-lib/tree/master/test/data/validator/errors">GTFS - validation errors that that involve entities in one or more files</a></li>
+<li><a href="https://github.com/interline-io/transitland-lib/tree/master/test/data/validator/best-practices">GTFS - best practices</a></li>
+<li><a href="https://github.com/interline-io/transitland-server/tree/main/test/data/rt">GTFS Realtime - JSON test cases that are turned into PB contents</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/MobilityData/gtfs-realtime-validator/tree/master/gtfs-realtime-validator-lib/src/test/">gtfs-realtime-validator unit tests</a> - Some <a href="https://github.com/MobilityData/gtfs-realtime-validator/tree/master/gtfs-realtime-validator-lib/src/test/resources">GTFS datasets (zip files)</a> are included and a large number of GTFS RT messages are defined <a href="https://github.com/MobilityData/gtfs-realtime-validator/tree/master/gtfs-realtime-validator-lib/src/test/java/edu/usf/cutr/gtfsrtvalidator/lib/test/rules">programmatically in Java</a> via the gtfs-realtime-bindings library.</li>
+<li><a href="https://github.com/opentripplanner/OpenTripPlanner/tree/dev-2.x/src/test">OpenTripPlanner unit tests</a> - Some <a href="https://github.com/opentripplanner/OpenTripPlanner/tree/dev-2.x/src/test/resources/gtfs">GTFS datasets</a> are defined for the unit tests (<a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-2.x/src/test/java/org/opentripplanner/GtfsTest.java">GtfsTest</a> and <a href="https://github.com/opentripplanner/OpenTripPlanner/tree/dev-2.x/src/test/java/org/opentripplanner/mmri">mmri folder</a>).</li>
 </ul>
 
               
