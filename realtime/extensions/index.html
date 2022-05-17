@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://gtfs.org/realtime/extensions/">
       
       <link rel="icon" href="../../assets/org-black.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.1.4">
     
     
       
@@ -163,7 +163,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/google/transit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -305,7 +305,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/google/transit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -1494,13 +1494,13 @@
 <p>To create a new extension, we will assign a producer the next available extension id, picked incrementally from a list of numbers starting at 1000 and going up and documented in the Extension Registry section found below.</p>
 <p>These assigned extension ids corresponds to the tag ids available in the "extension" namespace for each GTFS Realtime message definition. Now that the developer has an assigned extension id, they will use that id when extending any and all GTFS Realtime messages. Even if the developer only plans to extend a single message, the assigned extension id will be reserved for ALL messages.</p>
 <p>For a developer extending the spec, instead of adding a single field like a "string" or "int32" with their extension id, the preferred model is to define a new message like "MyTripDescriptorExtension", extend the underlying GTFS Realtime message with your new message, and then put all your new fields in there. This has the nice property that you can manage fields within your extension message however you want, without needing to reserve a new extension id from the master list.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">message</span> <span class="nc">MyTripDescriptorExtension</span> <span class="p">{</span>
-  <span class="k">optional</span> <span class="kt">string</span> <span class="na">some_string</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">optional</span> <span class="kt">bool</span> <span class="na">some_bool</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-  <span class="o">...</span>
+<div class="highlight"><pre><span></span><code><span class="kd">message</span><span class="w"> </span><span class="nc">MyTripDescriptorExtension</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="na">some_bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="o">...</span>
 <span class="p">}</span>
-<span class="kd">extend</span> <span class="nc">transit_realtime</span><span class="o">.</span><span class="n">TripDescriptor</span> <span class="p">{</span>
-  <span class="k">optional</span> <span class="n">MyTripDescriptorExtension</span> <span class="na">my_trip_descriptor</span> <span class="o">=</span> <span class="n">YOUR_EXTENSION_ID</span><span class="p">;</span>
+<span class="kd">extend</span><span class="w"> </span><span class="nc">transit_realtime</span><span class="o">.</span><span class="n">TripDescriptor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="n">MyTripDescriptorExtension</span><span class="w"> </span><span class="na">my_trip_descriptor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">YOUR_EXTENSION_ID</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>When creating extensions, developers should follow the <a href="https://developers.google.com/protocol-buffers/docs/proto">Protocol Buffers Language Guide</a>. A common mistake is re-using an extension field number. In the <a href="https://developers.google.com/protocol-buffers/docs/proto#assigning-field-numbers">Assigning Field Numbers section</a>, the Language Guide says:</p>
@@ -1508,11 +1508,11 @@
 <p>Each field in the message definition has a unique number. These numbers are used to identify your fields in the message binary format, and should not be changed once your message type is in use.</p>
 </blockquote>
 <p>For example, in the first example <code>some_string</code> was assigned field number <code>1</code>. When the developer no longer wishes to use <code>some_string</code>, or when <code>some_string</code> has been adopted in the official GTFS Realtime spec and there is no need for the extension, the developer cannot re-use field number <code>1</code> for a new field. Instead, the developer should deprecate the field and use a new number for the new field:
-<div class="highlight"><pre><span></span><code><span class="kd">message</span> <span class="nc">MyTripDescriptorExtension</span> <span class="p">{</span>
-  <span class="k">optional</span> <span class="kt">string</span> <span class="na">some_string</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="na">deprecated</span><span class="o">=</span><span class="kc">true</span><span class="p">];</span>
-  <span class="k">optional</span> <span class="kt">bool</span> <span class="na">some_bool</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-  <span class="k">optional</span> <span class="kt">string</span> <span class="na">some_new_string</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-  <span class="o">...</span>
+<div class="highlight"><pre><span></span><code><span class="kd">message</span><span class="w"> </span><span class="nc">MyTripDescriptorExtension</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">[</span><span class="na">deprecated</span><span class="o">=</span><span class="kc">true</span><span class="p">];</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="na">some_bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">some_new_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">  </span><span class="o">...</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="extension-registry">Extension Registry<a class="headerlink" href="#extension-registry" title="Permanent link">&para;</a></h2>
@@ -1914,7 +1914,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>

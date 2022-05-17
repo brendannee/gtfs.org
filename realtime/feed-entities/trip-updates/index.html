@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://gtfs.org/realtime/feed-entities/trip-updates/">
       
       <link rel="icon" href="../../../assets/org-black.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.1.4">
     
     
       
@@ -163,7 +163,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/google/transit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -305,7 +305,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/google/transit/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/google/transit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -779,19 +779,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stop-time-updates" class="md-nav__link">
-    Stop Time Updates
+  <a href="#stoptimeupdate" class="md-nav__link">
+    StopTimeUpdate
   </a>
   
-    <nav class="md-nav" aria-label="Stop Time Updates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trip-descriptor" class="md-nav__link">
-    Trip Descriptor
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tripdescriptor" class="md-nav__link">
+    TripDescriptor
   </a>
   
-    <nav class="md-nav" aria-label="Trip Descriptor">
+    <nav class="md-nav" aria-label="TripDescriptor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -805,11 +804,6 @@
   <a href="#alternative-trip-matching" class="md-nav__link">
     Alternative trip matching
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1534,23 +1528,23 @@
 <p>If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt">GTFS trips.txt</a>):
 * the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
 * the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with <code>trip_ids</code> 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the <code>trip_update</code> entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.</p>
-<h2 id="stop-time-updates">Stop Time Updates<a class="headerlink" href="#stop-time-updates" title="Permanent link">&para;</a></h2>
-<p>A trip update consists of one or more updates to vehicle stop times, which are referred to as <a href="reference.md#StopTimeUpdate">StopTimeUpdates</a>. These can be supplied for past and future stop times. You are allowed, but not required, to drop past stop times.  Producers should not drop a past <code>StopTimeUpdate</code> if it refers to a stop with a scheduled arrival time in the future for the given trip (i.e. the vehicle has passed the stop ahead of schedule), as otherwise it will be concluded that there is no update for this stop.</p>
+<h2 id="stoptimeupdate">StopTimeUpdate<a class="headerlink" href="#stoptimeupdate" title="Permanent link">&para;</a></h2>
+<p>A trip update consists of one or more updates to vehicle stop times, which are referred to as <a href="reference.md#message-stoptimeupdate">StopTimeUpdates</a>. These can be supplied for past and future stop times. You are allowed, but not required, to drop past stop times.  Producers should not drop a past <code>StopTimeUpdate</code> if it refers to a stop with a scheduled arrival time in the future for the given trip (i.e. the vehicle has passed the stop ahead of schedule), as otherwise it will be concluded that there is no update for this stop.</p>
 <p>For example, if the following data appears in the GTFS-rt feed:</p>
 <ul>
 <li>Stop 4 – Predicted at 10:18am (scheduled at 10:20am – 2 min early)</li>
 <li>Stop 5 – Predicted at 10:30am (scheduled at 10:30am – on time)</li>
 </ul>
 <p>...the prediction for Stop 4 cannot be dropped from the feed until 10:21am, even if the bus actually passes the stop at 10:18am. If the <code>StopTimeUpdate</code> for Stop 4 was dropped from the feed at 10:18am or 10:19am, and the scheduled arrival time is 10:20am, then the consumer should assume that no real-time information exists for Stop 4 at that time, and schedule data from GTFS should be used.</p>
-<p>Each <a href="reference.md#StopTimeUpdate">StopTimeUpdate</a> is linked to a stop. Ordinarily this can be done using either a GTFS stop_sequence or a GTFS stop_id. However, in the case you are providing an update for a trip without a GTFS trip_id, you must specify stop_id as stop_sequence has no value. The stop_id must still reference a stop_id in GTFS. If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.</p>
-<p>The update can provide a exact timing for <strong>arrival</strong> and/or <strong>departure</strong> at a stop in <a href="reference.md#StopTimeUpdate">StopTimeUpdates</a> using <a href="reference.md#StopTimeEvent">StopTimeEvent</a>. This should contain either an absolute <strong>time</strong> or a <strong>delay</strong> (i.e. an offset from the scheduled time in seconds). Delay can only be used in case the trip update refers to a scheduled GTFS trip, as opposed to a frequency-based trip. In this case, time should be equal to scheduled time + delay. You may also specify <strong>uncertainty</strong> of the prediction along with <a href="reference.md#StopTimeEvent">StopTimeEvent</a>, which is discussed in more detail in section <a href="#uncertainty">Uncertainty</a> further down the page.</p>
-<p>For each <a href="reference.md#StopTimeUpdate">StopTimeUpdate</a>, the default schedule relationship is <strong>scheduled</strong>. (Note that this is different from the schedule relationship for the trip). You may change this to <strong>skipped</strong> if the stop will not be stopped at, or <strong>no data</strong> if you only have realtime data for some of the trip.</p>
+<p>Each <a href="reference.md#message-stoptimeupdate">StopTimeUpdate</a> is linked to a stop. Ordinarily this can be done using either a GTFS stop_sequence or a GTFS stop_id. However, in the case you are providing an update for a trip without a GTFS trip_id, you must specify stop_id as stop_sequence has no value. The stop_id must still reference a stop_id in GTFS. If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.</p>
+<p>The update can provide a exact timing for <strong>arrival</strong> and/or <strong>departure</strong> at a stop in <a href="reference.md#message-stoptimeupdate">StopTimeUpdates</a> using <a href="reference.md#message-stoptimeevent">StopTimeEvent</a>. This should contain either an absolute <strong>time</strong> or a <strong>delay</strong> (i.e. an offset from the scheduled time in seconds). Delay can only be used in case the trip update refers to a scheduled GTFS trip, as opposed to a frequency-based trip. In this case, time should be equal to scheduled time + delay. You may also specify <strong>uncertainty</strong> of the prediction along with <a href="reference.md#message-stoptimeevent">StopTimeEvent</a>, which is discussed in more detail in section <a href="#uncertainty">Uncertainty</a> further down the page.</p>
+<p>For each <a href="reference.md#message-stoptimeupdate">StopTimeUpdate</a>, the default schedule relationship is <strong>scheduled</strong>. (Note that this is different from the schedule relationship for the trip). You may change this to <strong>skipped</strong> if the stop will not be stopped at, or <strong>no data</strong> if you only have realtime data for some of the trip.</p>
 <p><strong>Updates should be sorted by stop_sequence</strong> (or stop_ids in the order they occur in the trip).</p>
 <p>If one or more stops are missing along the trip the <code>delay</code> from the update (or, if only <code>time</code> is provided in the update, a delay computed by comparing the <code>time</code> against the GTFS schedule time) is propagated to all subsequent stops. This means that updating a stop time for a certain stop will change all subsequent stops in the absence of any other information. Note that updates with a schedule relationship of <code>SKIPPED</code> will not stop delay propagation, but updates with schedule relationships of <code>SCHEDULED</code> (also the default value if schedule relationship is not provided) or <code>NO_DATA</code> will.</p>
 <p><strong>Example 1</strong></p>
-<p>For a trip with 20 stops, a <a href="reference.md#StopTimeUpdate">StopTimeUpdate</a> with arrival delay and departure delay of 0 (<a href="reference.md#StopTimeEvent">StopTimeEvents</a>) for stop_sequence of the current stop means that the trip is exactly on time.</p>
+<p>For a trip with 20 stops, a <a href="reference.md#message-stoptimeupdate">StopTimeUpdate</a> with arrival delay and departure delay of 0 (<a href="reference.md#message-stoptimeevent">StopTimeEvents</a>) for stop_sequence of the current stop means that the trip is exactly on time.</p>
 <p><strong>Example 2</strong></p>
-<p>For the same trip instance, three <a href="reference.md#StopTimeUpdate">StopTimeUpdates</a> are provided:</p>
+<p>For the same trip instance, three <a href="reference.md#message-stoptimeupdate">StopTimeUpdates</a> are provided:</p>
 <ul>
 <li>delay of 300 seconds for stop_sequence 3</li>
 <li>delay of 60 seconds for stop_sequence 8</li>
@@ -1563,8 +1557,8 @@
 <li>stop_sequences 8,9 have delay of 60 seconds.</li>
 <li>stop_sequences 10,..,20 have unknown delay.</li>
 </ul>
-<h3 id="trip-descriptor">Trip Descriptor<a class="headerlink" href="#trip-descriptor" title="Permanent link">&para;</a></h3>
-<p>The information provided by the trip descriptor depends on the schedule relationship of trip you are updating. There are a number of options for you to set:</p>
+<h2 id="tripdescriptor">TripDescriptor<a class="headerlink" href="#tripdescriptor" title="Permanent link">&para;</a></h2>
+<p>The information provided by the TripDescriptor depends on the schedule relationship of trip you are updating. There are a number of options for you to set:</p>
 <table>
 <thead>
 <tr>
@@ -1627,7 +1621,7 @@ TripDescriptor including the combination of:</p>
 </ul>
 <p>where start_time is the scheduled start time as defined in the static schedule, as long as the combination of ids provided resolves to a unique trip.</p>
 <h2 id="uncertainty">Uncertainty<a class="headerlink" href="#uncertainty" title="Permanent link">&para;</a></h2>
-<p>Uncertainty applies to both the time and the delay value of a <a href="reference.md#StopTimeUpdate">StopTimeUpdate</a>. The uncertainty roughly specifies the expected error in true delay as an integer in seconds (but note, the precise statistical meaning is not defined yet). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.</p>
+<p>Uncertainty applies to both the time and the delay value of a <a href="reference.md#message-stoptimeupdate">StopTimeUpdate</a>. The uncertainty roughly specifies the expected error in true delay as an integer in seconds (but note, the precise statistical meaning is not defined yet). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.</p>
 <p>As an example a long-distance bus that has an estimated delay of 15 minutes arriving to its next stop within a 4 minute window of error (that is +2 / -2 minutes) will have an Uncertainty value of 240.</p>
 
               
@@ -1943,7 +1937,7 @@ TripDescriptor including the combination of:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.361d90f1.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
